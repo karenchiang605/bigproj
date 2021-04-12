@@ -40,6 +40,10 @@
             font-size: 12px;
         }
 
+        .shop_title_img img {
+            border-radius: 5px;
+        }
+
         .breadcrumb-item {
             font-size: 18px;
 
@@ -49,9 +53,9 @@
             color: #707070;
         }
 
-        .shop_container {
-            width: 1400px;
-        }
+
+
+
 
         .shop_btn {
             background-color: #c0c0c0;
@@ -92,7 +96,7 @@
 
         .shop_title li {
             font-size: 20px;
-            font-weight: bolder;
+            font-weight: bold;
             line-height: 2;
         }
 
@@ -132,13 +136,42 @@
             font-size: 22px;
             text-align: center;
         }
+
+        .shop_re_img {
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        @media (min-width: 992px) {
+            .shop_container {
+                width: 1400px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            h3 {
+                font-size: 24px;
+            }
+
+
+            .shop_title li {
+                font-size: 18px;
+                line-height: 2;
+            }
+
+            .shop_title div {
+                font-size: 16px;
+                line-height: 1.8;
+            }
+
+
+        }
     </style>
 </head>
 
 <body>
     <nav>
         <div class="navbar">
-            <!-- 請依檔案位置修改logo路徑 -->
             <img src="./img/logo2.png">
             <ul>
                 <li>Explore / 探索</li>
@@ -152,84 +185,109 @@
         </div>
         <hr class="navline">
     </nav>
-    <div class="shop_container container-fluid p-5">
+    <div class="shop_container container-fluid px-lg-5">
         <nav aria-label="breadcrumb">
-            <ol class="shop-breadcrumb breadcrumb bg-transparent pl-1">
+            <ol class="shop-breadcrumb breadcrumb bg-transparent pl-1 pb-lg-5 mb-0">
                 <li class="breadcrumb-item d-flex align-items-center"><a href="#">Home</a></li>
                 <li class="breadcrumb-item d-flex align-items-center"><a href="#">SHOP / 商店</a></li>
                 <li class="breadcrumb-item d-flex align-items-center active" aria-current="page">熱門商品</li>
             </ol>
         </nav>
-        <div class="row align-self-start no-gutters">
-            <div class="col-lg-7 d-flex pl-0">
+        <div id="carouselExampleIndicators" class="carousel slide d-lg-none" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="img/028.png" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="img/292.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="img/293.jpg" alt="Third slide">
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="shop_title_img col-lg-7 d-lg-flex pl-0 d-none">
                 <div class="col-3 row justify-content-between no-gutters">
-                    <div class="col-12"><img src="img/293.jpg" width="100%"></div>
+                    <div class="col-12"><img src="img/028.png" width="100%"></div>
                     <div class="col-12 d-flex align-items-center"><img src="img/292.jpg" width="100%"></div>
-                    <div class="col-12 d-flex align-items-end"><img src="img/800x0.jpg" width="100%"></div>
+                    <div class="col-12 d-flex align-items-end"><img src="img/293.jpg" width="100%"></div>
                 </div>
                 <div class="col-9 pl-2">
                     <div><img src="img/028.png" width="100%"></div>
                 </div>
             </div>
             <div class="col-lg-5">
-                <h3 class="shop_titletext">【Fulux弗洛克】</h3>
-                <h3 class="pl-2 shop_titletext">大甲媽祖鎮瀾宮聯名款 -睡睡平安記憶枕</h3>
-                <div class="shop_text1 pl-3 py-4">2021年限定 Fulux x 大甲鎮瀾宮聯名款 </div>
-                <div class=" shop_text pl-3 py-2">枕芯添加大甲媽香灰， <br>以鎮瀾宮濟世為懷的精神為出發點，<br>結合專業寢具精品，<br> 願您擁有「睡睡平安」的每一天!
-                </div>
-                <div class="shop_text2 pl-3 py-3">NT. 2,400元 </div>
-                <div class="d-flex justify-content-start align-items-center">
-                    <div class="shop_text px-3 py-4">數量</div>
-                    <div class="shop_input_qty pb-2">
-                        <input id="demo3" type="text" value="" name="demo3">
+                <div class="px-3">
+                    <h3 class="shop_titletext mt-lg-0 mt-4">大甲媽祖鎮瀾宮聯名款</h3>
+                    <h3 class="shop_titletext">睡睡平安記憶枕</h3>
+                    <div class="shop_text1 py-lg-4 py-2">2021年限定 Fulux x 大甲鎮瀾宮聯名款 </div>
+                    <div class=" shop_text py-2">枕芯添加大甲媽香灰， <br>以鎮瀾宮濟世為懷的精神為出發點，<br>結合專業寢具精品，<br> 願您擁有「睡睡平安」的每一天!
                     </div>
-                </div>
+                    <div class="d-flex d-lg-block justify-content-between">
+                        <div class="shop_text2  py-lg-3">NT. 2,400元 </div>
+                        <div class="d-flex justify-content-start align-items-center">
+                            <div class="shop_text px-3 py-lg-4">數量</div>
+                            <div class="shop_input_qty pb-2">
+                                <input id="demo3" type="text" value="" name="demo3">
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="d-flex justify-content-end pt-3 mr-5">
+                </div>
+                <div class="d-flex justify-content-end pt-3 mr-5 fixed-bottom d-lg-none">
+                    <button type="button" class="shop_btn btn btn-danger btn-lg mr-4">收藏</button>
+                    <button type="button" class="shop_btn btn btn-danger btn-lg mr-5">加入購物車</button>
+                </div>
+                <div class="d-none d-lg-flex justify-content-end pt-3 mr-5">
                     <button type="button" class="shop_btn btn btn-danger btn-lg mr-4">收藏</button>
                     <button type="button" class="shop_btn btn btn-danger btn-lg mr-5">加入購物車</button>
                 </div>
             </div>
         </div>
-        <div class="row mt-5">
-            <ul class="shop_title col-6 pt-5 pl-4">Description / 商品描述
-                <li class="pt-4">內容物 |</li>
+        <div class="row pt-lg-5 pt-2 px-3 px-lg-0">
+            <ul class="shop_title col-lg-6  col-12">Description / 商品描述
+                <li class="pt-2">內容物 |</li>
                 <div>聯名包裝盒 x 1、睡睡平安枕 x 1、聯名防塵袋 x 1</div>
                 <li>尺寸 |</li>
                 <div>60(L) x 33(W) x 12(H) cm</div>
                 <li>材質 |</li>
                 <div>
-                    枕心 -倍涼適親水綿+大甲媽香灰
+                    枕心 -倍涼適親水綿+大甲媽香灰<br>
                     表布 -海藻纖維+山寧泰防蟲抗菌
                 </div>
                 <li>產地 |</li>
                 <div>100%台灣製造</div>
             </ul>
-            <div class="shop_title col-6 pt-5">Features / 商品特色
-                <div class="pt-4">冰島特選海藻纖維 x 倍涼適親水綿。人體工學設計，兼顧仰睡，側睡者<br>需求。
-                    源自於醫療敷料的倍涼適材質在溫度上升時吸熱，溫度下降時分<br>子放熱，冬暖夏涼。倍涼適Balance
-                    Formula一年四季皆可提供舒壓最適性<br>（冬天不變硬）。海藻纖維SeaCell結合山寧泰Sanitized抗菌，有效防止細<br>菌阻隔異味。透氣表布套可拆洗保養便利，洗滌後抗菌效果依舊持久。
+            <div class="shop_title col-lg-6 col-12">Features / 商品特色
+                <div class="pt-2">冰島特選海藻纖維 x 倍涼適親水綿。人體工學設計，兼顧仰睡，側睡者需求。
+                    源自於醫療敷料的倍涼適材質在溫度上升時吸熱，溫度下降時分子放熱，冬暖夏涼。倍涼適Balance
+                    Formula一年四季皆可提供舒壓最適性（冬天不變硬）。海藻纖維SeaCell結合山寧泰Sanitized抗菌，有效防止細菌阻隔異味。透氣表布套可拆洗保養便利，洗滌後抗菌效果依舊持久。
                 </div>
             </div>
         </div>
-
-        <div class="row">
-            <div class="shop_title pl-4  my-5">Related Product / 相關商品</div>
-            <div class="col-12 row pl-4">
-                <div class="col-3 pl-2">
-                    <div class="shop_re_img"><img src="img/011.png" width="100%" /></div>
+        <div class="row ">
+            <div class="shop_title my-5 col-lg-12 mx-3 mx-lg-0">Related Product / 相關商品</div>
+            <div class="col-12 row mb-5">
+                <div class="col-lg-3 col-6">
+                    <div class="shop_re_img pb-2"><img src="img/011.png" width="100%" /></div>
                     <div class="shop_re_text">媽祖胸針 by Charlene Man</div>
                 </div>
-                <div class="col-3 pl-2">
-                    <div class="shop_re_img"><img src="img/013.png" width="100%" /></div>
+                <div class="col-lg-3 col-6">
+                    <div class="shop_re_img pb-2"><img src="img/013.png" width="100%" /></div>
                     <div class="shop_re_text">藝術廟宇戒指</div>
                 </div>
-                <div class="col-3 pl-2">
-                    <div class="shop_re_img"><img src="img/011.png" width="100%" /></div>
+                <div class="col-lg-3 col-6">
+                    <div class="shop_re_img pb-2"><img src="img/011.png" width="100%" /></div>
                     <div class="shop_re_text">媽祖胸針 by Charlene Man</div>
                 </div>
-                <div class="col-3 pl-2">
-                    <div class="shop_re_img"><img src="img/013.png" width="100%" /></div>
+                <div class="col-lg-3 col-6">
+                    <div class="shop_re_img pb-2"><img src="img/013.png" width="100%" /></div>
                     <div class="shop_re_text">藝術廟宇戒指</div>
                 </div>
             </div>

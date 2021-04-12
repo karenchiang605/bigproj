@@ -35,6 +35,10 @@
             color: #707070;
         }
 
+        .trip_title_img img {
+            border-radius: 5px;
+        }
+
         .trip_title_text {
             line-height: 1.5;
         }
@@ -60,6 +64,7 @@
 
         .trip_item_body {
             background-color: #fff;
+            font-size: 18px;
         }
 
         .trip_item_body_more {
@@ -129,6 +134,7 @@
             line-height: 2;
         }
 
+
         .tripc_item_body_price {
             color: #cc543a;
             font-weight: bold;
@@ -178,6 +184,11 @@
         .breadcrumb-item a {
             color: #707070;
         }
+
+        .trip_item_border {
+            border-radius: 5px;
+            overflow: hidden;
+        }
     </style>
 </head>
 
@@ -185,7 +196,7 @@
 
     <nav>
         <div class="navbar">
-            <!-- 請依檔案位置修改logo路徑 -->
+
             <img src="./img/logo2.png">
             <ul>
                 <li>Explore / 探索</li>
@@ -201,7 +212,7 @@
     </nav>
     <div class="trip_container container-fluid p-5">
         <nav aria-label="breadcrumb">
-            <ol class="trip-breadcrumb breadcrumb bg-transparent pl-1">
+            <ol class="trip-breadcrumb breadcrumb bg-transparent pl-1 pb-5">
                 <li class="breadcrumb-item d-flex align-items-center"><a href="#">Home</a></li>
                 <li class="breadcrumb-item d-flex align-items-center"><a href="#">TRIP / 行旅</a></li>
                 <li class="breadcrumb-item d-flex align-items-center"><a href="#">熱門行程</a></li>
@@ -209,7 +220,7 @@
             </ol>
         </nav>
         <div class="row">
-            <div class="col-lg-7 d-flex pl-0">
+            <div class="trip_title_img col-lg-7 d-flex pl-0">
                 <div class="col-3 row justify-content-between no-gutters">
                     <div class="col-12"><img src="./img/0271.png" width="100%"></div>
                     <div class="col-12 d-flex align-items-center"><img src="./img/027.png" width="100%"></div>
@@ -352,9 +363,9 @@
         </div>
         <h3 class="pb-4">熱門推薦 |</h3>
         <div class="container">
-            <div class="row px-5">
+            <div class="row">
                 <div class="col-lg-6 mt-4">
-                    <div class="trip_item border">
+                    <div class="trip_item_border">
                         <div class="d-flex no-gutters">
                             <div class="col-5 trip_item_image">
                                 <img src="img/img01.png" width="100%" />
@@ -376,7 +387,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mt-4">
-                    <div class="trip_item border">
+                    <div class="trip_item_border">
                         <div class="d-flex no-gutters">
                             <div class="col-5 trip_item_image">
                                 <img src="img/img01.png" width="100%" />
