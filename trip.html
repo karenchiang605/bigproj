@@ -29,8 +29,11 @@
             color: #707070;
         }
 
-        .trip_container {
-            width: 1400px;
+
+        @media (min-width: 992px) {
+            .trip_container {
+                width: 1400px;
+            }
         }
 
         .trip-breadcrumb .breadcrumb-item+.breadcrumb-item::before {
@@ -158,6 +161,12 @@
             text-decoration: none;
         }
 
+        .trip_price_txt {
+            font-size: 26px;
+            font-weight: bold;
+            color: #707070;
+        }
+
         #trip_price_range .slider-selection {
             background: #cc543a;
         }
@@ -204,7 +213,7 @@
         </div>
         <hr class="navline">
     </nav>
-    <div class="trip_container container-fluid p-5">
+    <div class="trip_container container-fluid p-lg-5">
         <nav aria-label="breadcrumb">
             <ol class="trip-breadcrumb breadcrumb bg-transparent pl-1">
                 <li class="breadcrumb-item d-flex align-items-center"><a href="#">Home</a></li>
@@ -244,8 +253,15 @@
                             <li class="py-1">人氣推薦</li>
                             <li class="py-1">熱門行程</li>
                             <li class="py-1">最新活動</li>
-                            <li class="py-1">
+                            <!-- <li class="py-1">
                                 <div>價錢預算</div>
+                                <div><input id="ex8" data-slider-id='trip_price_range' type="text" data-slider-min="0"
+                                        data-slider-max="10000" data-slider-step="100" data-slider-value="5000" /></div>
+                            </li> -->
+                        </ul>
+                        <ul>
+                            <li class="py-1">
+                                <div class="trip_price_txt">價錢預算 |</div>
                                 <div><input id="ex8" data-slider-id='trip_price_range' type="text" data-slider-min="0"
                                         data-slider-max="10000" data-slider-step="100" data-slider-value="5000" /></div>
                             </li>
