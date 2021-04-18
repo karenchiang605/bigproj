@@ -14,6 +14,10 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css"
         integrity="sha512-3q8fi8M0VS+X/3n64Ndpp6Bit7oXSiyCnzmlx6IDBLGlY5euFySyJ46RUlqIVs0DPCGOypqP8IRk/EyPvU28mQ=="
         crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css">
     <link rel="stylesheet" href="./css/nav_footer.css">
 
     <style>
@@ -117,6 +121,24 @@
 
         }
 
+        .trip_btn1 {
+            border: 1px solid #cc543a;
+            border-radius: 40px;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 5px 15px;
+            color: #cc543a;
+        }
+
+        .trip_btn1:hover {
+            background-color: #cc543a;
+            border-radius: 40px;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 5px 15px;
+            color: #fff;
+        }
+
         .trip_text2 {
             font-size: 24px;
             font-weight: bold;
@@ -204,7 +226,6 @@
             overflow-y: scroll;
             overflow-x: hidden;
             height: 500px;
-            width: 500px;
         }
 
         .trip_solution_choice {
@@ -231,22 +252,9 @@
 
         }
 
-        .trip_fixed_bottom .trip_btn_favorite {
-            color: #CC543A;
-            border: #CC543A 1px solid;
-            border-radius: 40px;
-            font-size: 18px;
-
+        .datepicker {
+            width: 100px;
         }
-
-        .trip_fixed_bottom .trip_btn_cart {
-            color: #FFF;
-            background-color: #CC543A;
-            border-radius: 40px;
-            font-size: 18px;
-
-        }
-
 
         @media (min-width: 992px) {
             .trip_container {
@@ -273,10 +281,6 @@
 
             .trip_item_body_more {
                 padding: 2px 10px;
-            }
-
-            footer {
-                margin-bottom: 56px;
             }
 
         }
@@ -387,8 +391,13 @@
                             <div class="row">
                                 <div class="trip_text1 col-5">請選擇造訪日期</div>
                                 <div class="col-7">
-                                    <button type="button"
-                                        class="btn btn-danger btn-lg trip_item_body_more py-1">查看可預訂日期</button>
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control datepicker">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
 
@@ -418,25 +427,26 @@
                             </div>
                         </div>
                         <hr class="mt-3">
-
-
                         <div class="d-lg-flex justify-content-end pt-lg-2 d-none d-lg-block">
-                            <div class="trip_price_detail pr-3 d-flex align-items-center" data-container="body"
-                                data-toggle="popover" data-placement="bottom" data-content="Vivamus
-                    sagittis lacus vel augue <b>laoreet</b> rutrum faucibus.">費用詳情<i class="fas fa-chevron-down"
+                            <div class="trip_price_detail pr-3 d-flex align-items-center" data-toggle="modal"
+                                data-target=".trip-more-modal-lg">費用詳情<i class="fas fa-chevron-down"
                                     style="font-size: 12px;"></i></div>
                             <div class="trip_text2">NT.2,400元</div>
                         </div>
-                        <div class="d-lg-flex justify-content-end pt-lg-3 mt-lg-3 d-none d-lg-block">
+                        <div class="d-none d-lg-flex justify-content-end pt-3">
+                            <div class="trip_btn1 mr-3">收藏</div>
+                            <div class="trip_btn1 pr-3">加入購物車</div>
+                        </div>
+                        <!-- <div class="d-lg-flex justify-content-end pt-lg-3 mt-lg-3 d-none d-lg-block">
                             <button type="button" class="trip_btn btn btn-danger btn-lg mr-3">收藏</button>
                             <button type="button" class="trip_btn btn btn-danger btn-lg pr-3">加入購物車</button>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
         </div>
         <div class="row pt-5">
-            <div class="col-lg-8 pt-lg-5 d-none d-lg-block">
+            <div class="col-lg-7 pt-lg-5 d-none d-lg-block">
                 <div class="row">
                     <div class="col-12">
                         <h3 class="pb-4">行程介紹 |</h3>
@@ -448,24 +458,24 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-4 pt-lg-5 pt-0 d-none d-lg-block">
+            <div class="col-lg-5 pt-lg-5 pt-0 d-none d-lg-block">
                 <h3 class="pb-4">評價 |</h3>
-                <div class="d-flex justify-content-between pb-5">
-                    <div class="trip_text">4.8</div>
-                    <div class="d-flex justify-content-start pt-2 pl-3">
-                        <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
-                        <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
-                        <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
-                        <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
-                        <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
+                <div class="pb-5 d-flex justify-content-between">
+                    <div class="d-flex justify-content-start">
+                        <div class="trip_text mr-4">4.8</div>
+                        <div class="d-flex justify-content-start pr-3 pt-2 pl-0">
+                            <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
+                            <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
+                            <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
+                            <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
+                            <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
+                        </div>
+                        <div class="pt-2 ">62則評價</div>
                     </div>
-                    <div class="pt-2 ">62則評價</div>
-                    <div class="trip_sort">
+                    <div class="trip_sort ">
                         <div class="form-inline">
                             <label class="pr-3" for="exampleFormControlSelect1"></label>
                             <select class="form-control bg-transparent" id="exampleFormControlSelect1">
-                                <option>推薦</option>
                                 <option>最新</option>
                                 <option>評分:從高至低</option>
                                 <option>評分:從低至高</option>
@@ -563,7 +573,7 @@
         </div>
         <div class="d-lg-none d-block trip_day mb-4 py-2">查看全部評價</div>
         <h3 class="pb-lg-4 pb-3 ">熱門推薦 |</h3>
-        <div class="container-lg container-fluid p-0 pb-5">
+        <div class="container-lg container-fluid p-0 pb-5 mb-5 mb-lg-0">
             <div class="trip_scrolling_wrapper row flex-row flex-nowrap mb-lg-4 ">
                 <div class="col-lg-6 col-10 mt-lg-4 px-lg-4">
                     <div class="trip_item_border">
@@ -613,24 +623,41 @@
                 </div>
             </div>
         </div>
-        <div class="trip_fixed_bottom w-100 d-flex justify-content-between py-2 fixed-bottom d-lg-none ">
+
+        <div class="trip_fixed_bottom w-100 d-flex justify-content-between py-2 px-2 fixed-bottom d-lg-none ">
             <div class="trip_fixed_bottom1 py-2"><i class="far fa-heart px-2" style="color: #fff;"></i>收藏</div>
             <div class="trip_fixed_bottom_line"></div>
             <div class="trip_fixed_bottom1 py-2"><i class="fas fa-shopping-cart px-2" style="color: #fff;"></i>加入購物車
             </div>
         </div>
     </div>
-    <footer>
+    <footer class="d-none d-lg-flex">
         <p>Copyright© TempleTrip.tw</p>
     </footer>
 
-
+    <div class="modal fade trip-more-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myLargeModalLabel">費用詳情</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span
+                            aria-hidden="true">×</span> </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-6 border">asdfsafsf</div>
+                            <div class="col-6 border">sfdsfasfsafs</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
@@ -645,6 +672,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-touchspin/4.3.0/jquery.bootstrap-touchspin.min.js"
         integrity="sha512-0hFHNPMD0WpvGGNbOaTXP0pTO9NkUeVSqW5uFG2f5F9nKyDuHE3T4xnfKhAhnAZWZIO/gBLacwVvxxq0HuZNqw=="
         crossorigin="anonymous"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+    <script src="js/bootstrap-datepicker.zh-TW.min.js"></script>
 
     <script>
         $("input[name='demo3']").TouchSpin({
@@ -656,10 +687,14 @@
             buttondown_class: 'btn btn-default',
             buttonup_class: 'btn btn-default'
         });
-        $('.trip_price_detail').popover({
-            html: true,
-            trigger: 'hover'
-        })
+        // $('.trip_price_detail').popover({
+        //     html: true,
+        //     trigger: 'hover'
+        // })
+        $('.datepicker').datepicker({
+            language: "zh-TW"
+        });
+
     </script>
 
 </body>

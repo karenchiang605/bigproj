@@ -44,6 +44,12 @@
             border-radius: 5px;
         }
 
+        .shop_title_img .shop_imghover img:hover {
+            transform: scale(1.1, 1.1);
+
+        }
+
+
         .breadcrumb-item {
             font-size: 18px;
 
@@ -53,15 +59,25 @@
             color: #707070;
         }
 
-
         .shop_btn {
-            background-color: #c0c0c0;
-            border: 5px solid #c0c0c0;
+            border: 1px solid #cc543a;
             border-radius: 40px;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
-            border: 5px solid #c0c0c0;
+            padding: 5px 15px;
+            color: #cc543a;
         }
+
+        .shop_btn.active,
+        .shop_btn:hover {
+            background-color: #cc543a;
+            border-radius: 40px;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 5px 15px;
+            color: #fff;
+        }
+
 
 
         .shop_text {
@@ -135,6 +151,7 @@
         }
 
         .shop_re_img {
+            position: relative;
             border-radius: 5px;
             overflow: hidden;
         }
@@ -157,21 +174,28 @@
 
         }
 
-        .shop_fixed_bottom .shop_btn_favorite {
-            color: #CC543A;
-            border: #CC543A 1px solid;
-            border-radius: 40px;
-            font-size: 18px;
-
+        .shop_re_more {
+            display: none;
         }
 
-        .shop_fixed_bottom .shop_btn_cart {
-            color: #FFF;
-            background-color: #CC543A;
-            border-radius: 40px;
-            font-size: 18px;
-
+        .shop_re_img:hover .shop_re_more {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgb(0, 0, 0, 0.5);
+            width: 100%;
+            height: 100%;
         }
+
+        .shop_re_more div {
+            color: #fff;
+            border-bottom: 1px solid #AFAFAF;
+            width: 60%;
+            text-align: center;
+        }
+
 
 
         @media (min-width: 992px) {
@@ -202,6 +226,10 @@
 
             .shop_re_text {
                 font-size: 18px;
+            }
+
+            .shop_scrolling_wrapper {
+                overflow-x: auto;
             }
 
         }
@@ -252,20 +280,20 @@
                 </div>
             </div>
         </div>
-        <div class="row ">
-            <div class="shop_title_img col-lg-7 d-lg-flex pl-0 d-none">
-                <div class="col-3 row justify-content-between no-gutters">
+        <div class="row">
+            <div class="col-lg-7 shop_title_img  d-lg-flex pl-0 d-none">
+                <div class="col-3  shop_imghover row justify-content-between no-gutters">
                     <div class="col-12"><img src="img/028.png" width="100%"></div>
                     <div class="col-12 d-flex align-items-center"><img src="img/292.jpg" width="100%"></div>
                     <div class="col-12 d-flex align-items-end"><img src="img/293.jpg" width="100%"></div>
                 </div>
-                <div class="col-9 pl-2">
-                    <div><img src="img/028.png" width="100%"></div>
+                <div class="col-9 pl-2 ">
+                    <div><img id="shop_imgclick" src="img/028.png" width="100%"></div>
                 </div>
             </div>
             <div class="col-lg-5">
                 <h3 class="shop_titletext mt-lg-0 mt-4">大甲媽祖鎮瀾宮聯名款</h3>
-                <h3 class="shop_titletext">睡睡平安記憶枕</h3>
+                <h3 class="shop_titletext">大甲鎮瀾宮聯名款_睡睡平安記憶枕</h3>
                 <div class="shop_text1 py-lg-4 py-2">2021年限定 Fulux x 大甲鎮瀾宮聯名款 </div>
                 <div class=" shop_text py-2">枕芯添加大甲媽香灰， <br>以鎮瀾宮濟世為懷的精神為出發點，<br>結合專業寢具精品，<br> 願您擁有「睡睡平安」的每一天!
                 </div>
@@ -286,13 +314,19 @@
                     </div>
                 </div>
                 <div class="d-none d-lg-flex justify-content-end pt-3 mr-5">
-                    <button type="button" class="shop_btn btn btn-danger btn-lg mr-4">收藏</button>
-                    <button type="button" class="shop_btn btn btn-danger btn-lg mr-5">加入購物車</button>
+                    <div class="shop_btn mr-4">收藏</div>
+                    <div class="shop_btn mr-5">加入購物車</div>
                 </div>
             </div>
         </div>
         <div class="row pt-lg-5 pt-2 px-lg-0">
-            <ul class="shop_title col-lg-6  col-12">Description / 商品描述
+            <div class="shop_title col-lg-7 col-12">Features / 商品特色
+                <div class="pt-4">冰島特選海藻纖維 x 倍涼適親水綿。人體工學設計，兼顧仰睡，側睡者需求。
+                    源自於醫療敷料的倍涼適材質在溫度上升時吸熱，溫度下降時分子放熱，冬暖夏涼。倍涼適Balance
+                    Formula一年四季皆可提供舒壓最適性（冬天不變硬）。海藻纖維SeaCell結合山寧泰Sanitized抗菌，有效防止細菌阻隔異味。透氣表布套可拆洗保養便利，洗滌後抗菌效果依舊持久。
+                </div>
+            </div>
+            <ul class="shop_title col-lg-5  col-12">Description / 商品描述
                 <li class="pt-4">內容物 |</li>
                 <div>聯名包裝盒 x 1、睡睡平安枕 x 1、聯名防塵袋 x 1</div>
                 <li>尺寸 |</li>
@@ -305,34 +339,49 @@
                 <li>產地 |</li>
                 <div>100%台灣製造</div>
             </ul>
-            <div class="shop_title col-lg-6 col-12">Features / 商品特色
-                <div class="pt-4">冰島特選海藻纖維 x 倍涼適親水綿。人體工學設計，兼顧仰睡，側睡者需求。
-                    源自於醫療敷料的倍涼適材質在溫度上升時吸熱，溫度下降時分子放熱，冬暖夏涼。倍涼適Balance
-                    Formula一年四季皆可提供舒壓最適性（冬天不變硬）。海藻纖維SeaCell結合山寧泰Sanitized抗菌，有效防止細菌阻隔異味。透氣表布套可拆洗保養便利，洗滌後抗菌效果依舊持久。
-                </div>
-            </div>
+
         </div>
         <div class="row">
             <div class="shop_title my-4 col-lg-12 mx-lg-0 ">Related Product / 相關商品</div>
-
         </div>
-        <div class="row mb-lg-5 mb-2">
+        <div class="row mb-lg-5 mb-2 shop_scrolling_wrapper flex-nowrap flex-row ">
             <div class="col-lg-3 col-6">
-                <div class="shop_re_img pb-2"><img src="img/011.png" width="100%" /></div>
+                <div class="shop_re_img mb-2">
+                    <img src="img/011.png" width="100%" />
+                    <div class="shop_re_more">
+                        <div class="align-self-center py-1">查看詳情</div>
+                    </div>
+                </div>
                 <div class="shop_re_text">媽祖胸針 by Charlene Man</div>
             </div>
             <div class="col-lg-3 col-6">
-                <div class="shop_re_img pb-2"><img src="img/013.png" width="100%" /></div>
+                <div class="shop_re_img mb-2">
+                    <img src="img/013.png" width="100%" />
+                    <div class="shop_re_more">
+                        <div class="align-self-center py-1">查看詳情</div>
+                    </div>
+                </div>
                 <div class="shop_re_text">藝術廟宇戒指</div>
             </div>
             <div class="col-lg-3 col-6">
-                <div class="shop_re_img pb-2"><img src="img/011.png" width="100%" /></div>
+                <div class="shop_re_img mb-2">
+                    <img src="img/011.png" width="100%" />
+                    <div class="shop_re_more">
+                        <div class="align-self-center py-1">查看詳情</div>
+                    </div>
+                </div>
                 <div class="shop_re_text">媽祖胸針 by Charlene Man</div>
             </div>
             <div class="col-lg-3 col-6">
-                <div class="shop_re_img pb-2"><img src="img/013.png" width="100%" /></div>
+                <div class="shop_re_img mb-2">
+                    <img src="img/013.png" width="100%" />
+                    <div class="shop_re_more">
+                        <div class="align-self-center py-1">查看詳情</div>
+                    </div>
+                </div>
                 <div class="shop_re_text">藝術廟宇戒指</div>
             </div>
+
         </div>
     </div>
     <footer>
@@ -354,6 +403,7 @@
         integrity="sha512-0hFHNPMD0WpvGGNbOaTXP0pTO9NkUeVSqW5uFG2f5F9nKyDuHE3T4xnfKhAhnAZWZIO/gBLacwVvxxq0HuZNqw=="
         crossorigin="anonymous"></script>
 
+
     <script>
         $("input[name='demo3']").TouchSpin({
             initval: 1,
@@ -364,7 +414,19 @@
             buttondown_class: 'btn btn-default',
             buttonup_class: 'btn btn-default'
         });
+
+        $(".shop_title_img .shop_imghover img").click(function () {
+            $("#shop_imgclick").attr("src", $(this).attr("src"))
+
+
+        });
+
+        $(".shop_btn").click(function () {
+            $(this).addClass("active");
+        });
     </script>
+
+
 </body>
 
 </html>
