@@ -19,9 +19,13 @@
         integrity="sha512-0GlDFjxPsBIRh0ZGa2IMkNT54XGNaGqeJQLtMAw6EMEDQJ0WqpnU6COVA91cUS0CeVA5HtfBfzS9rlJR3bPMyw=="
         crossorigin="anonymous" />
     <link rel="stylesheet" href="./css/nav_footer.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
     <style>
         body {
-            font-family: 'Sitka Display', NSimSun, 'sans-serif';
+            font-family: 'Faustina', serif;
             background-image: url(./img/bcc.png);
             font-size: 16px;
         }
@@ -83,7 +87,7 @@
         .shop_text {
             color: #707070;
             font-size: 18px;
-            line-height: 1.8;
+            line-height: 2;
         }
 
         .shop_text1 {
@@ -103,6 +107,7 @@
         .shop_title {
             font-size: 24px;
             font-weight: bold;
+            color: #707070;
 
 
         }
@@ -143,6 +148,9 @@
             background: transparent;
             text-align: center;
             border: 1px solid #C1C1C1;
+            font-weight: bold;
+            font-size: 18px;
+            color: #707070;
         }
 
         .shop_re_text {
@@ -196,7 +204,30 @@
             text-align: center;
         }
 
+        .shop_scrolling_wrapper .shop_re_img:hover img {
+            transform: scale(1.1, 1.1);
+        }
 
+        #carouselHotControls i {
+            font-size: 20px;
+            color: #707070;
+        }
+
+        .carousel-control-prev {
+            left: -110px;
+        }
+
+        .carousel-control-next {
+            right: -110px;
+        }
+
+        #carouselExampleIndicators li {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            /* background-color: #c0c0c0; */
+
+        }
 
         @media (min-width: 992px) {
             .shop_container {
@@ -217,11 +248,7 @@
 
             .shop_title div {
                 font-size: 16px;
-                line-height: 1.8;
-            }
-
-            footer {
-                height: 60px;
+                line-height: 2;
             }
 
             .shop_re_text {
@@ -230,6 +257,10 @@
 
             .shop_scrolling_wrapper {
                 overflow-x: auto;
+            }
+
+            footer {
+                display: none;
             }
 
         }
@@ -252,7 +283,7 @@
         </div>
         <hr class="navline">
     </nav>
-    <div class="shop_container container-fluid px-lg-5">
+    <div class="shop_container container-fluid px-lg-5 ">
         <nav aria-label="breadcrumb">
             <ol class="shop-breadcrumb breadcrumb bg-transparent pl-1 pb-lg-5 mb-0">
                 <li class="breadcrumb-item d-flex align-items-center"><a href="#">Home</a></li>
@@ -292,47 +323,47 @@
                 </div>
             </div>
             <div class="col-lg-5">
-                <h3 class="shop_titletext mt-lg-0 mt-4">大甲媽祖鎮瀾宮聯名款</h3>
-                <h3 class="shop_titletext">大甲鎮瀾宮聯名款_睡睡平安記憶枕</h3>
-                <div class="shop_text1 py-lg-4 py-2">2021年限定 Fulux x 大甲鎮瀾宮聯名款 </div>
-                <div class=" shop_text py-2">枕芯添加大甲媽香灰， <br>以鎮瀾宮濟世為懷的精神為出發點，<br>結合專業寢具精品，<br> 願您擁有「睡睡平安」的每一天!
+                <h3 class="shop_titletext mt-lg-0 mt-5">大甲媽祖鎮瀾宮聯名款</h3>
+                <h3 class="shop_titletext pt-2">聯名款_睡睡平安記憶枕睡睡平安記憶枕</h3>
+                <div class="shop_text1 py-4">2021年限定 Fulux x 大甲鎮瀾宮聯名款 </div>
+                <div class=" shop_text pb-5">枕芯添加大甲媽香灰， <br>以鎮瀾宮濟世為懷的精神為出發點，<br>結合專業寢具精品，<br> 願您擁有「睡睡平安」的每一天!
                 </div>
                 <div class="d-flex d-lg-block justify-content-between">
-                    <div class="shop_text2  py-lg-3">NT. 2,400元 </div>
-                    <div class="d-flex justify-content-start align-items-center">
-                        <div class="shop_text px-3 py-lg-4">數量</div>
-                        <div class="shop_input_qty pb-2">
+                    <div class="shop_text2  py-lg-2">NTD 2,400元 </div>
+                    <div class=" d-flex justify-content-start align-items-center">
+                        <div class="shop_text px-3 py-lg-4 px-lg-0">數量</div>
+                        <div class="shop_input_qty pb-2 pb-lg-2 pl-lg-4">
                             <input id="demo3" type="text" value="" name="demo3">
                         </div>
                     </div>
                 </div>
-                <div class="shop_fixed_bottom w-100 d-flex justify-content-between py-2 fixed-bottom d-lg-none ">
+                <div class="shop_fixed_bottom w-100 d-flex justify-content-between py-2 px-2 fixed-bottom d-lg-none ">
                     <div class="shop_fixed_bottom1 py-2"><i class="far fa-heart px-2" style="color: #fff;"></i>收藏</div>
                     <div class="shop_fixed_bottom_line"></div>
                     <div class="shop_fixed_bottom1 py-2"><i class="fas fa-shopping-cart px-2"
                             style="color: #fff;"></i>加入購物車
                     </div>
                 </div>
-                <div class="d-none d-lg-flex justify-content-end pt-3 mr-5">
+                <div class="d-none d-lg-flex justify-content-end pt-3 ">
                     <div class="shop_btn mr-4">收藏</div>
-                    <div class="shop_btn mr-5">加入購物車</div>
+                    <div class="shop_btn">加入購物車</div>
                 </div>
             </div>
         </div>
         <div class="row pt-lg-5 pt-2 px-lg-0">
-            <div class="shop_title col-lg-7 col-12">Features / 商品特色
+            <div class="shop_title col-lg-7 col-12 pt-5 pt-lg-0 ">Features / 商品特色
                 <div class="pt-4">冰島特選海藻纖維 x 倍涼適親水綿。人體工學設計，兼顧仰睡，側睡者需求。
                     源自於醫療敷料的倍涼適材質在溫度上升時吸熱，溫度下降時分子放熱，冬暖夏涼。倍涼適Balance
                     Formula一年四季皆可提供舒壓最適性（冬天不變硬）。海藻纖維SeaCell結合山寧泰Sanitized抗菌，有效防止細菌阻隔異味。透氣表布套可拆洗保養便利，洗滌後抗菌效果依舊持久。
                 </div>
             </div>
-            <ul class="shop_title col-lg-5  col-12">Description / 商品描述
+            <ul class="shop_title col-lg-5  col-12 pt-5 pt-lg-0">Description / 商品描述
                 <li class="pt-4">內容物 |</li>
-                <div>聯名包裝盒 x 1、睡睡平安枕 x 1、聯名防塵袋 x 1</div>
+                <div class="pb-2">聯名包裝盒 x 1、睡睡平安枕 x 1、聯名防塵袋 x 1</div>
                 <li>尺寸 |</li>
-                <div>60(L) x 33(W) x 12(H) cm</div>
+                <div class="pb-2">60(L) x 33(W) x 12(H) cm</div>
                 <li>材質 |</li>
-                <div>
+                <div class="pb-2">
                     枕心 -倍涼適親水綿+大甲媽香灰<br>
                     表布 -海藻纖維+山寧泰防蟲抗菌
                 </div>
@@ -342,48 +373,170 @@
 
         </div>
         <div class="row">
-            <div class="shop_title my-4 col-lg-12 mx-lg-0 ">Related Product / 相關商品</div>
+            <div class="shop_title pt-5 col-lg-12 mx-lg-0 ">Related Product / 相關商品</div>
         </div>
-        <div class="row mb-lg-5 mb-2 shop_scrolling_wrapper flex-nowrap flex-row ">
-            <div class="col-lg-3 col-6">
+        <div class="row pt-5 pb-5 shop_scrolling_wrapper flex-nowrap flex-row d-flex-block d-lg-none">
+            <div class="col-lg-3 col-6 mb-5">
                 <div class="shop_re_img mb-2">
                     <img src="img/011.png" width="100%" />
                     <div class="shop_re_more">
-                        <div class="align-self-center py-1">查看詳情</div>
                     </div>
                 </div>
-                <div class="shop_re_text">媽祖胸針 by Charlene Man</div>
+                <div class="shop_re_text">媽祖胸針</div>
             </div>
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-6 mb-5">
                 <div class="shop_re_img mb-2">
                     <img src="img/013.png" width="100%" />
                     <div class="shop_re_more">
-                        <div class="align-self-center py-1">查看詳情</div>
                     </div>
                 </div>
                 <div class="shop_re_text">藝術廟宇戒指</div>
             </div>
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-6 mb-5">
                 <div class="shop_re_img mb-2">
                     <img src="img/011.png" width="100%" />
                     <div class="shop_re_more">
-                        <div class="align-self-center py-1">查看詳情</div>
                     </div>
                 </div>
-                <div class="shop_re_text">媽祖胸針 by Charlene Man</div>
+                <div class="shop_re_text">媽祖胸針 by </div>
             </div>
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-6 mb-5">
                 <div class="shop_re_img mb-2">
                     <img src="img/013.png" width="100%" />
                     <div class="shop_re_more">
-                        <div class="align-self-center py-1">查看詳情</div>
                     </div>
                 </div>
                 <div class="shop_re_text">藝術廟宇戒指</div>
             </div>
+        </div>
+        <div class="mb-5 mt-5 shop_scrolling_wrapper flex-nowrap flex-row d-none d-lg-block">
+            <div id="carouselHotControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner container-fluid px-0 ">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="shop_re_img mb-2">
+                                    <img src="img/011.png" width="100%" />
+                                    <div class="shop_re_more">
+                                    </div>
+                                </div>
+                                <div class="shop_re_text pt-1">媽祖胸針 by </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="shop_re_img mb-2">
+                                    <img src="img/013.png" width="100%" />
+                                    <div class="shop_re_more">
+                                    </div>
+                                </div>
+                                <div class="shop_re_text pt-1">藝術廟宇戒指</div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="shop_re_img mb-2">
+                                    <img src="img/011.png" width="100%" />
+                                    <div class="shop_re_more">
+                                    </div>
+                                </div>
+                                <div class="shop_re_text pt-1">媽祖胸針 </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="shop_re_img mb-2">
+                                    <img src="img/013.png" width="100%" />
+                                    <div class="shop_re_more">
+                                    </div>
+                                </div>
+                                <div class="shop_re_text pt-1">藝術廟宇戒指</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="shop_re_img mb-2">
+                                    <img src="img/011.png" width="100%" />
+                                    <div class="shop_re_more">
+                                    </div>
+                                </div>
+                                <div class="shop_re_text pt-1">媽祖胸針</div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="shop_re_img mb-2">
+                                    <img src="img/013.png" width="100%" />
+                                    <div class="shop_re_more">
+                                    </div>
+                                </div>
+                                <div class="shop_re_text pt-1">藝術廟宇戒指</div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="shop_re_img mb-2">
+                                    <img src="img/011.png" width="100%" />
+                                    <div class="shop_re_more">
+                                    </div>
+                                </div>
+                                <div class="shop_re_text pt-1">媽祖胸針 </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="shop_re_img mb-2">
+                                    <img src="img/013.png" width="100%" />
+                                    <div class="shop_re_more">
+                                    </div>
+                                </div>
+                                <div class="shop_re_text pt-1">藝術廟宇戒指</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row ">
+                            <div class="col-lg-3">
+                                <div class="shop_re_img mb-2">
+                                    <img src="img/011.png" width="100%" />
+                                    <div class="shop_re_more">
+                                    </div>
+                                </div>
+                                <div class="shop_re_text pt-1">媽祖胸針 </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="shop_re_img mb-2">
+                                    <img src="img/013.png" width="100%" />
+                                    <div class="shop_re_more">
+                                    </div>
+                                </div>
+                                <div class="shop_re_text pt-1">藝術廟宇戒指</div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="shop_re_img mb-2">
+                                    <img src="img/011.png" width="100%" />
+                                    <div class="shop_re_more">
+                                    </div>
+                                </div>
+                                <div class="shop_re_text pt-1">媽祖胸針 </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="shop_re_img mb-2">
+                                    <img src="img/013.png" width="100%" />
+                                    <div class="shop_re_more">
+                                    </div>
+                                </div>
+                                <div class="shop_re_text pt-1">藝術廟宇戒指</div>
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselHotControls" role="button" data-slide="prev">
+                    <i class="fas fa-chevron-left"></i>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselHotControls" role="button" data-slide="next">
+                    <i class="fas fa-chevron-right"></i>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
         </div>
+
     </div>
+
+
+
     <footer>
         <p>Copyright© TempleTrip.tw</p>
     </footer>
