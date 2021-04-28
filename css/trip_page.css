@@ -24,7 +24,7 @@ h3 {
 }
 
 .trip_title_text {
-    line-height: 1.5;
+    line-height: 2;
 }
 
 .trip_text {
@@ -37,6 +37,7 @@ h3 {
 .trip_text1 {
     font-size: 22px;
     color: #707070;
+    font-weight: bold;
 }
 
 .trip_item_body {
@@ -73,39 +74,43 @@ h3 {
     color: #707070;
     border: 1px solid #C1C1C1;
     height: 40px;
-    background-color: transparent;
+    /* background-color: transparent; */
    
-
-
 }
 
 .trip_input_qty {
     width: 153px;
 }
 
-.trip_input_qty .bootstrap-touchspin-down {
+/* .trip_input_qty .bootstrap-touchspin-down {
     border-radius: 5px;
     border-left: 1px solid #C1C1C1;
     border-top: 1px solid #C1C1C1;
     border-bottom: 1px solid #C1C1C1;
-}
+} */
 
-.trip_input_qty .bootstrap-touchspin-up {
+/* .trip_input_qty .bootstrap-touchspin-up {
     border-radius: 5px;
     border-right: 1px solid #C1C1C1;
     border-top: 1px solid #C1C1C1;
     border-bottom: 1px solid #C1C1C1;
-}
+} */
 
 
 .trip_input_qty .form-control {
     background: transparent;
     text-align: center;
-    border: 1px solid #C1C1C1;
+    border: none;
     color: #707070;
     font-size: 18px;
     font-weight: bold;
 }
+
+.trip_input_qty .input-group {
+            background-color: #fff;
+            border: 1px solid #C1C1C1;
+            border-radius: 5px;
+        }
 
 .trip_btn2 {
     color: #cc543a;
@@ -117,7 +122,7 @@ h3 {
 
 }
 
-.trip_btn2:hover {
+.trip_btn2.active {
     background-color: #cc543a;
     color: #fff
 }
@@ -231,7 +236,7 @@ h3 {
 }
 
 .trip_solution_choice {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     color: #707070;
 }
@@ -270,11 +275,27 @@ h3 {
     /* background-color: #c0c0c0; */
 
 }
+.trip_left {
+    left: 160px;
+}
+.trip_right {
+    right: 160px;
+}
 
-.trip_date_text{
-    font-size: 22px;
+.trip_details{
+    border-radius:10px;
+    background-image: url(/bigproj/img/bcc.png);
+    font-size: 18px;
     color: #707070;
 }
+.trip_details_text{
+    font-weight: bold;
+}
+
+
+
+    
+
 @media (min-width: 992px) {
     .trip_container {
         width: 1400px;
