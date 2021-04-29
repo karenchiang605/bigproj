@@ -64,22 +64,20 @@
         }
 
         .shop_btn {
-            border: 1px solid #cc543a;
-            border-radius: 40px;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 5px 15px;
             color: #cc543a;
+            border: 1px solid #cc543a;
+            font-weight: bold;
+            border-radius: 50px;
+            font-size: 18px;
+            padding: 5px 15px;
+
         }
 
         .shop_btn.active,
         .shop_btn:hover {
             background-color: #cc543a;
-            border-radius: 40px;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 5px 15px;
             color: #fff;
+
         }
 
 
@@ -104,8 +102,15 @@
             color: #cc543a;
         }
 
+        .shop_text3 {
+            color: #707070;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
         .shop_title {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             color: #707070;
 
@@ -161,8 +166,11 @@
             background-color: #CC543A;
             color: #fff;
             text-align: center;
+            font-size: 18px;
+            font-weight: bold;
 
         }
+
 
         .shop_fixed_bottom1 {
             width: 50%;
@@ -317,14 +325,14 @@
             </div>
             <div class="col-lg-5">
                 <h3 class="shop_titletext mt-lg-0 mt-5">大甲媽祖鎮瀾宮聯名款</h3>
-                <h3 class="shop_titletext pt-2">聯名款_睡睡平安記憶枕睡睡平安記憶枕</h3>
+                <h3 class="shop_titletext pt-2">聯名款_睡睡平安記憶枕</h3>
                 <div class="shop_text1 py-4">2021年限定 Fulux x 大甲鎮瀾宮聯名款 </div>
                 <div class=" shop_text pb-5">枕芯添加大甲媽香灰， <br>以鎮瀾宮濟世為懷的精神為出發點，<br>結合專業寢具精品，<br> 願您擁有「睡睡平安」的每一天!
                 </div>
                 <div class="d-flex d-lg-block justify-content-between">
                     <div class="shop_text2  py-lg-2">NTD 2,400元 </div>
                     <div class=" d-flex justify-content-start align-items-center">
-                        <div class="shop_text px-3 py-lg-4 px-lg-0">數量</div>
+                        <div class="shop_text3 px-3 py-lg-4 px-lg-0">數量</div>
                         <div class="shop_input_qty pb-2 pb-lg-2 pl-lg-4">
                             <input style="background-color: #fff;" id="demo3" type="text" value="" name="demo3">
                         </div>
@@ -369,7 +377,7 @@
             <div class="shop_title pt-5 col-lg-12 mx-lg-0 ">Related Product / 相關商品</div>
         </div>
         <div class="row pt-5 pb-5 shop_scrolling_wrapper flex-nowrap flex-row d-flex-block d-lg-none">
-            <div class="col-lg-3 col-6 mb-5">
+            <div class="col-lg-3 col-5 mb-5">
                 <div class="shop_re_img mb-2">
                     <img src="img/011.png" width="100%" />
                     <div class="shop_re_more">
@@ -377,7 +385,7 @@
                 </div>
                 <div class="shop_re_text">媽祖胸針</div>
             </div>
-            <div class="col-lg-3 col-6 mb-5">
+            <div class="col-lg-3 col-5 mb-5">
                 <div class="shop_re_img mb-2">
                     <img src="img/013.png" width="100%" />
                     <div class="shop_re_more">
@@ -385,7 +393,7 @@
                 </div>
                 <div class="shop_re_text">藝術廟宇戒指</div>
             </div>
-            <div class="col-lg-3 col-6 mb-5">
+            <div class="col-lg-3 col-5 mb-5">
                 <div class="shop_re_img mb-2">
                     <img src="img/011.png" width="100%" />
                     <div class="shop_re_more">
@@ -393,7 +401,7 @@
                 </div>
                 <div class="shop_re_text">媽祖胸針 by </div>
             </div>
-            <div class="col-lg-3 col-6 mb-5">
+            <div class="col-lg-3 col-5 mb-5">
                 <div class="shop_re_img mb-2">
                     <img src="img/013.png" width="100%" />
                     <div class="shop_re_more">
@@ -568,7 +576,7 @@
         });
 
         $(".shop_btn").click(function () {
-            $(this).addClass("active");
+            $(this).toggleClass("active");
         });
     </script>
 

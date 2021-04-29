@@ -6,7 +6,7 @@ body {
 
 
 h3 {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: bold;
     color: #707070;
 }
@@ -116,7 +116,7 @@ h3 {
     color: #cc543a;
     border: 1px solid #cc543a;
     border-radius: 50px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     padding: 5px 15px;
 
@@ -129,7 +129,7 @@ h3 {
 
 .trip_btn1 {
     border: 1px solid #cc543a;
-    border-radius: 40px;
+    border-radius: 50px;
     font-size: 18px;
     font-weight: bold;
     padding: 5px 15px;
@@ -283,16 +283,22 @@ h3 {
 }
 
 .trip_details{
-    border-radius:10px;
+    border-radius:20px;
     background-image: url(/bigproj/img/bcc.png);
-    font-size: 18px;
+    font-size: 20px;
     color: #707070;
+    width: 520px;
+    height: 370px;
+    line-height: 2;
+    text-align:left;
 }
 .trip_details_text{
     font-weight: bold;
 }
 
-
+.trip_details .modal-header{
+    border: none;
+}
 
     
 
