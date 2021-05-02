@@ -121,28 +121,39 @@ h3 {
     padding: 5px 15px;
 
 }
-
-.trip_btn2.active {
+.trip_btn2:hover,
+.trip_btn2.active{
     background-color: #cc543a;
-    color: #fff
+    color: #fff;
+}
+
+.trip_btn_mobile{
+    color: #cc543a;
+    border: 1px solid #cc543a;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 15px;
+}
+
+.trip_btn_mobile.active{
+    background-color: #cc543a;
+    color: #fff;
 }
 
 .trip_btn1 {
-    border: 1px solid #cc543a;
-    border-radius: 50px;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 5px 15px;
-    color: #cc543a;
+    background-color: #cc543a;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            padding: 5px 15px;
+            color: #fff;
 }
 
 .trip_btn1:hover {
-    background-color: #cc543a;
-    border-radius: 40px;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 5px 15px;
-    color: #fff;
+    background-color: #dd745e;
+
 }
 
 .trip_text2 {
@@ -275,12 +286,7 @@ h3 {
     /* background-color: #c0c0c0; */
 
 }
-.trip_left {
-    left: 160px;
-}
-.trip_right {
-    right: 160px;
-}
+
 
 .trip_details{
     border-radius:20px;
@@ -300,11 +306,27 @@ h3 {
     border: none;
 }
 
+.trip_like_btn {
+   
+    border-radius: 50px;
+    padding: 5px 15px;
+}
     
 
 @media (min-width: 992px) {
     .trip_container {
         width: 1400px;
+    }
+    .trip_hot{
+        width: 1400px;
+    }
+    .trip_left {
+        width: auto;
+        left: 50px;
+    }
+    .trip_right {
+        width: auto;
+        right: 50px;
     }
 }
 
@@ -352,4 +374,5 @@ h3 {
     footer {
         display: none;
     }
+   
 }
