@@ -17,6 +17,8 @@
         crossorigin="anonymous" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="./css/nav_footer.css">
+    <link rel="stylesheet" href="./css/nav2.css">
+    <link rel="stylesheet" href="./css/breadcrumb.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
@@ -28,23 +30,6 @@
             font-size: 16px;
         }
 
-        .trip_body_bg {
-            position: relative;
-        }
-
-        .trip_body_bg:after {
-            content: '';
-            display: block;
-            width: 700px;
-            height: 625px;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            background-size: cover;
-            background-image: url(img/nav_left_g_mark.png);
-            opacity: 0.39;
-        }
-
         h3 {
             font-size: 24px;
             font-weight: bold;
@@ -54,6 +39,23 @@
         @media (min-width: 992px) {
             .trip_container {
                 width: 1400px;
+            }
+
+            .trip_body_bg {
+                position: relative;
+            }
+
+            .trip_body_bg:before {
+                content: '';
+                display: block;
+                width: 700px;
+                height: 625px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background-size: cover;
+                background-image: url(img/nav_left_g_mark.png);
+                opacity: 0.39;
             }
 
 
@@ -365,9 +367,6 @@
             border-radius: 50%;
             top: 0;
             right: 0;
-        }
-
-        .trip_like_mobile {
             font-size: 18px;
             color: #cc543a;
         }
@@ -391,33 +390,116 @@
 </head>
 
 <body>
-    <div class="container-fluid trip_body_bg">
-        <nav>
-            <div class="navbar">
-                <!-- 請依檔案位置修改logo路徑 -->
-                <img src='./img/logo2.png'>
-                <ul>
-                    <li>Explore / 探索</li>
-                    <li>TRIP / 行旅</li>
-                    <li>SERVICE / 線上服務</li>
-                    <li>SHOP / 商店</li>
-                    <li>CART / 購物車</li>
-                    <li>MEMBER / 會員中心</li>
-                </ul>
-                <div class="ham"><i class="fas fa-bars"></i></div>
-            </div>
-            <hr class="navline">
-        </nav>
-        <div>
-            <nav aria-label="breadcrumb">
-                <ol class="trip-breadcrumb breadcrumb bg-transparent d-flex justify-content-start d-block d-lg-none">
-                    <li class="breadcrumb-item d-flex align-items-center"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item d-flex align-items-center active" aria-current="page">TRIP / 行旅</li>
-                </ol>
-            </nav>
+    <div class="nav_burgurBar">
+        <div class="nav_burgurBar_img">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" viewBox="0 0 25 20">
+                <g id="Group_135" data-name="Group 135" transform="translate(-341.5 -1313.5)">
+                    <line id="Line_50" data-name="Line 50" x2="23" transform="translate(342.5 1314.5)" fill="none"
+                        stroke="#707070" stroke-linecap="round" stroke-width="2" />
+                    <line id="Line_51" data-name="Line 51" x2="23" transform="translate(342.5 1323.5)" fill="none"
+                        stroke="#707070" stroke-linecap="round" stroke-width="2" />
+                    <line id="Line_52" data-name="Line 52" x2="23" transform="translate(342.5 1332.5)" fill="none"
+                        stroke="#707070" stroke-linecap="round" stroke-width="2" />
+                </g>
+            </svg>
         </div>
+
+        <div class="nav_logo_mobile">
+            <img src="./img/nav_logo_mobile.svg" alt="">
+        </div>
+
+    </div>
+    <div class="nav_overlayNav">
+        <div class="nav_closeBtn mb-4">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 20 20">
+                <title>close</title>
+                <path fill='#fff'
+                    d="M10 8.586l-7.071-7.071-1.414 1.414 7.071 7.071-7.071 7.071 1.414 1.414 7.071-7.071 7.071 7.071 1.414-1.414-7.071-7.071 7.071-7.071-1.414-1.414-7.071 7.071z">
+                </path>
+            </svg>
+        </div>
+        <div class="nav_overlayNavBox">
+            <ul>
+                <a href="">
+                    <li>最新消息</li>
+                </a>
+                <a href="">
+                    <li>探索灣廟</li>
+                </a>
+                <a href="">
+                    <li>線上服務</li>
+                </a>
+                <a href="">
+                    <li>聖地巡禮</li>
+                </a>
+                <a href="">
+                    <li>祈福商店</li>
+                </a>
+                <a href="">
+                    <li>購物車</li>
+                </a>
+                <a href="" data-toggle="modal" data-target="#loginCenter">
+                    <li>登入 | 註冊</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+    <!-- 電腦螢幕大小的navbar -->
+    <nav class="nav_navbar_com">
+        <div class="nav_navbar_com_container">
+            <!-- 請依檔案位置修改logo路徑 -->
+            <img src='./img/nav_logo.svg'>
+
+            <div class="nav_navbar">
+                <div class="nav_navbarBox">
+                    <ul class="nav_nav_left">
+                        <a href="">
+                            <li class="nav_news"></li>
+                        </a>
+                        <a href="">
+                            <li class="nav_explore"></li>
+                        </a>
+                        <a href="">
+                            <li class="nav_serv"></li>
+                        </a>
+                        <a href="">
+                            <li class="nav_trip"></li>
+                        </a>
+                        <a href="">
+                            <li class="nav_shop"></li>
+                        </a>
+                        <a href="">
+                            <li class="nav_cart"></li>
+                        </a>
+                    </ul>
+                    <ul class="nav_nav_right">
+                        <a href="" data-toggle="modal" data-target="#loginCenter">
+                            <li>登入</li>
+                        </a>
+                        <span>|</span>
+                        <a href="" data-toggle="modal" data-target="#registerCenter">
+                            <li>註冊</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="nav_navline">
+    </nav>
+    <div class="container-fluid trip_body_bg">
+
         <!-- mobile -->
         <div class="container d-block d-lg-none">
+            <div class="breadcrumb_style   backgroundimg_1">
+                <div class="d-flex flex-wrap breadcrumb_style_1 ">
+                    <a href="" class="astlyep">Home</a>
+                    <!-- 共用雲端找箭頭icon-->
+                    <img src="./img/nav_arrow_right.svg">
+                    商店
+                </div>
+            </div>
             <div class="row px-3 d-flex justify-content-between">
                 <select class="trip_item_body_more1 shadow mb-2 bg-white text-center" id="exampleFormControlSelect1">
                     <option>行程分類</option>
@@ -432,11 +514,14 @@
                     <option>熱門行程</option>
                     <option>最新活動</option>
                 </select>
-                <div class=" trip_item_body_more1 shadow mb-2 bg-white d-flex align-items-center justify-content-center"
+                <div class="trip_item_body_more1 shadow mb-2 bg-white d-flex align-items-center justify-content-center"
                     data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
                     aria-controls="collapseExample">
-                    價格範圍
+                    價錢範圍
                 </div>
+
+            </div>
+            <div class="row">
                 <div class="collapse trip_price_mobile" id="collapseExample">
                     <div class="card card-body">
                         <ul>
@@ -444,202 +529,204 @@
                                 <div class="trip_price_txt_mobile">價錢範圍</div>
                                 <div><input class="trip_price_range_mobile" id="ex8" data-slider-id='trip_price_range'
                                         type="text" data-slider-min="0" data-slider-max="10000" data-slider-step="500"
-                                        data-slider-value="5000" /></div>
+                                        data-slider-value="5000" />
+                                </div>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div class="d-block d-lg-none">
-                    <div class="row trip_item_border d-flex no-gutters mt-4 mb-4 shadow bg-white rounded">
-                        <div class="col-5 trip_item_image">
-                            <img src="img/img01.png" width="100%" />
-                        </div>
-                        <div class="col-7 trip_item_body_mobile">
-                            <div class="trip_item_body_title_mobile mt-3 mx-3">蒐集離島媽祖</div>
-                            <div class="trip_item_body_body mx-3">
-                                <div class="py-1"><i class="fas fa-map-marker-alt"></i>澎湖-蘭嶼-綠島</div>
-                                <div class="py-1"><i class="far fa-clock"></i>4天3夜</div>
-                                <div class="py-1"><i class="fas fa-quote-left"></i>是媽祖叫我去的！</div>
-                            </div>
-                            <div class="tripc_item_body_price_mobile mx-3"><span>NTD 3,250</span> 元起</div>
-                            <div class="mb-1 d-flex justify-content-end">
-                                <div class="mr-3 my-2 trip_item_body_more_mobile">查看詳情</div>
-                            </div>
-                            <div
-                                class="trip_like_mobile position-absolute d-flex justify-content-center align-items-center mr-2 mt-2">
-                                <i class="far fa-heart"></i>
-                            </div>
-                        </div>
+            </div>
+            <div class="d-block d-lg-none">
+                <div class="row trip_item_border d-flex no-gutters mt-4 mb-4 shadow bg-white rounded">
+                    <div class="col-5 trip_item_image">
+                        <img src="img/img01.png" width="100%" />
                     </div>
-                    <div class="row trip_item_border d-flex no-gutters mb-4 shadow mb-4 bg-white rounded">
-                        <div class="col-5 trip_item_image">
-                            <img src="img/img01.png" width="100%" />
+                    <div class="col-7 trip_item_body_mobile">
+                        <div class="trip_item_body_title_mobile mt-3 mx-3">蒐集離島媽祖</div>
+                        <div class="trip_item_body_body mx-3">
+                            <div class="py-1"><i class="fas fa-map-marker-alt"></i>澎湖-蘭嶼-綠島</div>
+                            <div class="py-1"><i class="far fa-clock"></i>4天3夜</div>
+                            <div class="py-1"><i class="fas fa-quote-left"></i>是媽祖叫我去的！</div>
                         </div>
-                        <div class="col-7 trip_item_body_mobile">
-                            <div class="trip_item_body_title_mobile mt-3 mx-3">蒐集離島媽祖</div>
-                            <div class="trip_item_body_body mx-3">
-                                <div class="py-1"><i class="fas fa-map-marker-alt"></i>澎湖-蘭嶼-綠島</div>
-                                <div class="py-1"><i class="far fa-clock"></i>4天3夜</div>
-                                <div class="py-1"><i class="fas fa-quote-left"></i>是媽祖叫我去的！</div>
-                            </div>
-                            <div class="tripc_item_body_price_mobile mx-3"><span>NTD 3,250</span> 元起</div>
-                            <div class="mb-1 d-flex justify-content-end">
-                                <div class="mr-3 my-2 trip_item_body_more_mobile">查看詳情</div>
-                            </div>
-                            <div
-                                class="trip_like_mobile position-absolute d-flex justify-content-center align-items-center mr-2 mt-2">
-                                <i class="far fa-heart"></i>
-                            </div>
+                        <div class="tripc_item_body_price_mobile mx-3"><span>NTD 3,250</span> 元起</div>
+                        <div class="mb-1 d-flex justify-content-end">
+                            <div class="mr-3 my-2 trip_item_body_more_mobile">查看詳情</div>
                         </div>
-                    </div>
-                    <div class="row trip_item_border d-flex no-gutters mb-4 shadow mb-4 bg-white rounded">
-                        <div class="col-5 trip_item_image">
-                            <img src="img/img01.png" width="100%" />
-                        </div>
-                        <div class="col-7 trip_item_body_mobile">
-                            <div class="trip_item_body_title_mobile mt-3 mx-3">蒐集離島媽祖</div>
-                            <div class="trip_item_body_body mx-3">
-                                <div class="py-1"><i class="fas fa-map-marker-alt"></i>澎湖-蘭嶼-綠島</div>
-                                <div class="py-1"><i class="far fa-clock"></i>4天3夜</div>
-                                <div class="py-1"><i class="fas fa-quote-left"></i>是媽祖叫我去的！</div>
-                            </div>
-                            <div class="tripc_item_body_price_mobile mx-3"><span>NTD 3,250</span> 元起</div>
-                            <div class="mb-1 d-flex justify-content-end">
-                                <div class="mr-3 my-2 trip_item_body_more_mobile">查看詳情</div>
-                            </div>
-                            <div
-                                class="trip_like_mobile position-absolute d-flex justify-content-center align-items-center mr-2 mt-2">
-                                <i class="far fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row trip_item_border d-flex no-gutters mb-4 shadow mb-4 bg-white rounded">
-                        <div class="col-5 trip_item_image">
-                            <img src="img/img01.png" width="100%" />
-                        </div>
-                        <div class="col-7 trip_item_body_mobile">
-                            <div class="trip_item_body_title_mobile mt-3 mx-3">蒐集離島媽祖</div>
-                            <div class="trip_item_body_body mx-3">
-                                <div class="py-1"><i class="fas fa-map-marker-alt"></i>澎湖-蘭嶼-綠島</div>
-                                <div class="py-1"><i class="far fa-clock"></i>4天3夜</div>
-                                <div class="py-1"><i class="fas fa-quote-left"></i>是媽祖叫我去的！</div>
-                            </div>
-                            <div class="tripc_item_body_price_mobile mx-3"><span>NTD 3,250</span> 元起</div>
-                            <div class="mb-1 d-flex justify-content-end">
-                                <div class="mr-3 my-2 trip_item_body_more_mobile">查看詳情</div>
-                            </div>
-                            <div
-                                class="trip_like_mobile position-absolute d-flex justify-content-center align-items-center mr-2 mt-2">
-                                <i class="far fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row trip_item_border d-flex no-gutters mb-4 shadow mb-4 bg-white rounded">
-                        <div class="col-5 trip_item_image">
-                            <img src="img/img01.png" width="100%" />
-                        </div>
-                        <div class="col-7 trip_item_body_mobile">
-                            <div class="trip_item_body_title_mobile mt-3 mx-3">蒐集離島媽祖</div>
-                            <div class="trip_item_body_body mx-3">
-                                <div class="py-1"><i class="fas fa-map-marker-alt"></i>澎湖-蘭嶼-綠島</div>
-                                <div class="py-1"><i class="far fa-clock"></i>4天3夜</div>
-                                <div class="py-1"><i class="fas fa-quote-left"></i>是媽祖叫我去的！</div>
-                            </div>
-                            <div class="tripc_item_body_price_mobile mx-3"><span>NTD 3,250</span> 元起</div>
-                            <div class="mb-1 d-flex justify-content-end">
-                                <div class="mr-3 my-2 trip_item_body_more_mobile">查看詳情</div>
-                            </div>
-                            <div
-                                class="trip_like_mobile position-absolute d-flex justify-content-center align-items-center mr-2 mt-2">
-                                <i class="far fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row trip_item_border d-flex no-gutters mb-4 shadow mb-4 bg-white rounded">
-                        <div class="col-5 trip_item_image">
-                            <img src="img/img01.png" width="100%" />
-                        </div>
-                        <div class="col-7 trip_item_body_mobile">
-                            <div class="trip_item_body_title_mobile mt-3 mx-3">蒐集離島媽祖</div>
-                            <div class="trip_item_body_body mx-3">
-                                <div class="py-1"><i class="fas fa-map-marker-alt"></i>澎湖-蘭嶼-綠島</div>
-                                <div class="py-1"><i class="far fa-clock"></i>4天3夜</div>
-                                <div class="py-1"><i class="fas fa-quote-left"></i>是媽祖叫我去的！</div>
-                            </div>
-                            <div class="tripc_item_body_price_mobile mx-3"><span>NTD 3,250</span> 元起</div>
-                            <div class="mb-1 d-flex justify-content-end">
-                                <div class="mr-3 my-2 trip_item_body_more_mobile">查看詳情</div>
-                            </div>
-                            <div
-                                class="trip_like_mobile position-absolute d-flex justify-content-center align-items-center mr-2 mt-2">
-                                <i class="far fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row trip_item_border d-flex no-gutters mb-4 shadow mb-4 bg-white rounded">
-                        <div class="col-5 trip_item_image">
-                            <img src="img/img01.png" width="100%" />
-                        </div>
-                        <div class="col-7 trip_item_body_mobile">
-                            <div class="trip_item_body_title_mobile mt-3 mx-3">蒐集離島媽祖</div>
-                            <div class="trip_item_body_body mx-3">
-                                <div class="py-1"><i class="fas fa-map-marker-alt"></i>澎湖-蘭嶼-綠島</div>
-                                <div class="py-1"><i class="far fa-clock"></i>4天3夜</div>
-                                <div class="py-1"><i class="fas fa-quote-left"></i>是媽祖叫我去的！</div>
-                            </div>
-                            <div class="tripc_item_body_price_mobile mx-3"><span>NTD 3,250</span> 元起</div>
-                            <div class="mb-1 d-flex justify-content-end">
-                                <div class="mr-3 my-2 trip_item_body_more_mobile">查看詳情</div>
-                            </div>
-                            <div
-                                class="trip_like_mobile position-absolute d-flex justify-content-center align-items-center mr-2 mt-2">
-                                <i class="far fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row trip_item_border d-flex no-gutters mb-4 shadow mb-4 bg-white rounded">
-                        <div class="col-5 trip_item_image">
-                            <img src="img/img01.png" width="100%" />
-                        </div>
-                        <div class="col-7 trip_item_body_mobile">
-                            <div class="trip_item_body_title_mobile mt-3 mx-3">蒐集離島媽祖</div>
-                            <div class="trip_item_body_body mx-3">
-                                <div class="py-1"><i class="fas fa-map-marker-alt"></i>澎湖-蘭嶼-綠島</div>
-                                <div class="py-1"><i class="far fa-clock"></i>4天3夜</div>
-                                <div class="py-1"><i class="fas fa-quote-left"></i>是媽祖叫我去的！</div>
-                            </div>
-                            <div class="tripc_item_body_price_mobile mx-3"><span>NTD 3,250</span> 元起</div>
-                            <div class="mb-1 d-flex justify-content-end">
-                                <div class="mr-3 my-2 trip_item_body_more_mobile">查看詳情</div>
-                            </div>
-                            <div
-                                class="trip_like_mobile position-absolute d-flex justify-content-center align-items-center mr-2 mt-2">
-                                <i class="far fa-heart"></i>
-                            </div>
+                        <div
+                            class="trip_like_mobile position-absolute d-flex justify-content-center align-items-center mr-2 mt-2">
+                            <i class="far fa-heart"></i>
                         </div>
                     </div>
                 </div>
-                <nav class="trip_page position-relative d-flex justify-content-center"
-                    aria-label="Page navigation example">
-                    <ul class="pagination ">
-                        <li class="page-item"><a class="page-link trip_page_item1" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link trip_page_item1" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link trip_page_item1" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link trip_page_item1" href="#">4</a></li>
-                        <li class="page-item"><a class="page-link trip_page_item1" href="#">></a></li>
-                    </ul>
-                </nav>
+                <div class="row trip_item_border d-flex no-gutters mb-4 shadow mb-4 bg-white rounded">
+                    <div class="col-5 trip_item_image">
+                        <img src="img/img01.png" width="100%" />
+                    </div>
+                    <div class="col-7 trip_item_body_mobile">
+                        <div class="trip_item_body_title_mobile mt-3 mx-3">蒐集離島媽祖</div>
+                        <div class="trip_item_body_body mx-3">
+                            <div class="py-1"><i class="fas fa-map-marker-alt"></i>澎湖-蘭嶼-綠島</div>
+                            <div class="py-1"><i class="far fa-clock"></i>4天3夜</div>
+                            <div class="py-1"><i class="fas fa-quote-left"></i>是媽祖叫我去的！</div>
+                        </div>
+                        <div class="tripc_item_body_price_mobile mx-3"><span>NTD 3,250</span> 元起</div>
+                        <div class="mb-1 d-flex justify-content-end">
+                            <div class="mr-3 my-2 trip_item_body_more_mobile">查看詳情</div>
+                        </div>
+                        <div
+                            class="trip_like_mobile position-absolute d-flex justify-content-center align-items-center mr-2 mt-2">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row trip_item_border d-flex no-gutters mb-4 shadow mb-4 bg-white rounded">
+                    <div class="col-5 trip_item_image">
+                        <img src="img/img01.png" width="100%" />
+                    </div>
+                    <div class="col-7 trip_item_body_mobile">
+                        <div class="trip_item_body_title_mobile mt-3 mx-3">蒐集離島媽祖</div>
+                        <div class="trip_item_body_body mx-3">
+                            <div class="py-1"><i class="fas fa-map-marker-alt"></i>澎湖-蘭嶼-綠島</div>
+                            <div class="py-1"><i class="far fa-clock"></i>4天3夜</div>
+                            <div class="py-1"><i class="fas fa-quote-left"></i>是媽祖叫我去的！</div>
+                        </div>
+                        <div class="tripc_item_body_price_mobile mx-3"><span>NTD 3,250</span> 元起</div>
+                        <div class="mb-1 d-flex justify-content-end">
+                            <div class="mr-3 my-2 trip_item_body_more_mobile">查看詳情</div>
+                        </div>
+                        <div
+                            class="trip_like_mobile position-absolute d-flex justify-content-center align-items-center mr-2 mt-2">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row trip_item_border d-flex no-gutters mb-4 shadow mb-4 bg-white rounded">
+                    <div class="col-5 trip_item_image">
+                        <img src="img/img01.png" width="100%" />
+                    </div>
+                    <div class="col-7 trip_item_body_mobile">
+                        <div class="trip_item_body_title_mobile mt-3 mx-3">蒐集離島媽祖</div>
+                        <div class="trip_item_body_body mx-3">
+                            <div class="py-1"><i class="fas fa-map-marker-alt"></i>澎湖-蘭嶼-綠島</div>
+                            <div class="py-1"><i class="far fa-clock"></i>4天3夜</div>
+                            <div class="py-1"><i class="fas fa-quote-left"></i>是媽祖叫我去的！</div>
+                        </div>
+                        <div class="tripc_item_body_price_mobile mx-3"><span>NTD 3,250</span> 元起</div>
+                        <div class="mb-1 d-flex justify-content-end">
+                            <div class="mr-3 my-2 trip_item_body_more_mobile">查看詳情</div>
+                        </div>
+                        <div
+                            class="trip_like_mobile position-absolute d-flex justify-content-center align-items-center mr-2 mt-2">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row trip_item_border d-flex no-gutters mb-4 shadow mb-4 bg-white rounded">
+                    <div class="col-5 trip_item_image">
+                        <img src="img/img01.png" width="100%" />
+                    </div>
+                    <div class="col-7 trip_item_body_mobile">
+                        <div class="trip_item_body_title_mobile mt-3 mx-3">蒐集離島媽祖</div>
+                        <div class="trip_item_body_body mx-3">
+                            <div class="py-1"><i class="fas fa-map-marker-alt"></i>澎湖-蘭嶼-綠島</div>
+                            <div class="py-1"><i class="far fa-clock"></i>4天3夜</div>
+                            <div class="py-1"><i class="fas fa-quote-left"></i>是媽祖叫我去的！</div>
+                        </div>
+                        <div class="tripc_item_body_price_mobile mx-3"><span>NTD 3,250</span> 元起</div>
+                        <div class="mb-1 d-flex justify-content-end">
+                            <div class="mr-3 my-2 trip_item_body_more_mobile">查看詳情</div>
+                        </div>
+                        <div
+                            class="trip_like_mobile position-absolute d-flex justify-content-center align-items-center mr-2 mt-2">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row trip_item_border d-flex no-gutters mb-4 shadow mb-4 bg-white rounded">
+                    <div class="col-5 trip_item_image">
+                        <img src="img/img01.png" width="100%" />
+                    </div>
+                    <div class="col-7 trip_item_body_mobile">
+                        <div class="trip_item_body_title_mobile mt-3 mx-3">蒐集離島媽祖</div>
+                        <div class="trip_item_body_body mx-3">
+                            <div class="py-1"><i class="fas fa-map-marker-alt"></i>澎湖-蘭嶼-綠島</div>
+                            <div class="py-1"><i class="far fa-clock"></i>4天3夜</div>
+                            <div class="py-1"><i class="fas fa-quote-left"></i>是媽祖叫我去的！</div>
+                        </div>
+                        <div class="tripc_item_body_price_mobile mx-3"><span>NTD 3,250</span> 元起</div>
+                        <div class="mb-1 d-flex justify-content-end">
+                            <div class="mr-3 my-2 trip_item_body_more_mobile">查看詳情</div>
+                        </div>
+                        <div
+                            class="trip_like_mobile position-absolute d-flex justify-content-center align-items-center mr-2 mt-2">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row trip_item_border d-flex no-gutters mb-4 shadow mb-4 bg-white rounded">
+                    <div class="col-5 trip_item_image">
+                        <img src="img/img01.png" width="100%" />
+                    </div>
+                    <div class="col-7 trip_item_body_mobile">
+                        <div class="trip_item_body_title_mobile mt-3 mx-3">蒐集離島媽祖</div>
+                        <div class="trip_item_body_body mx-3">
+                            <div class="py-1"><i class="fas fa-map-marker-alt"></i>澎湖-蘭嶼-綠島</div>
+                            <div class="py-1"><i class="far fa-clock"></i>4天3夜</div>
+                            <div class="py-1"><i class="fas fa-quote-left"></i>是媽祖叫我去的！</div>
+                        </div>
+                        <div class="tripc_item_body_price_mobile mx-3"><span>NTD 3,250</span> 元起</div>
+                        <div class="mb-1 d-flex justify-content-end">
+                            <div class="mr-3 my-2 trip_item_body_more_mobile">查看詳情</div>
+                        </div>
+                        <div
+                            class="trip_like_mobile position-absolute d-flex justify-content-center align-items-center mr-2 mt-2">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row trip_item_border d-flex no-gutters mb-4 shadow mb-4 bg-white rounded">
+                    <div class="col-5 trip_item_image">
+                        <img src="img/img01.png" width="100%" />
+                    </div>
+                    <div class="col-7 trip_item_body_mobile">
+                        <div class="trip_item_body_title_mobile mt-3 mx-3">蒐集離島媽祖</div>
+                        <div class="trip_item_body_body mx-3">
+                            <div class="py-1"><i class="fas fa-map-marker-alt"></i>澎湖-蘭嶼-綠島</div>
+                            <div class="py-1"><i class="far fa-clock"></i>4天3夜</div>
+                            <div class="py-1"><i class="fas fa-quote-left"></i>是媽祖叫我去的！</div>
+                        </div>
+                        <div class="tripc_item_body_price_mobile mx-3"><span>NTD 3,250</span> 元起</div>
+                        <div class="mb-1 d-flex justify-content-end">
+                            <div class="mr-3 my-2 trip_item_body_more_mobile">查看詳情</div>
+                        </div>
+                        <div
+                            class="trip_like_mobile position-absolute d-flex justify-content-center align-items-center mr-2 mt-2">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <nav class="trip_page position-relative d-flex justify-content-center" aria-label="Page navigation example">
+                <ul class="pagination ">
+                    <li class="page-item"><a class="page-link trip_page_item1" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link trip_page_item1" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link trip_page_item1" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link trip_page_item1" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link trip_page_item1" href="#">></a></li>
+                </ul>
+            </nav>
         </div>
 
         <!-- 網頁 -->
-        <div class="trip_container container-fluid p-lg-5 d-none d-lg-block ">
-            <nav aria-label="breadcrumb">
-                <ol class="trip-breadcrumb breadcrumb bg-transparent pl-1">
-                    <li class="breadcrumb-item d-flex align-items-center"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item d-flex align-items-center active" aria-current="page">行旅</li>
-                </ol>
-            </nav>
+        <div class="trip_container container-fluid px-lg-5 d-none d-lg-block ">
+            <div class="breadcrumb_style   backgroundimg_1">
+                <div class="d-flex flex-wrap breadcrumb_style_1 ">
+                    <a href="" class="astlyep">Home</a>
+                    <!-- 共用雲端找箭頭icon-->
+                    <img src="./img/nav_arrow_right.svg">
+                    商店
+                </div>
+            </div>
             <div class="row">
                 <div class="col-3">
                     <div style="max-width:210px;">
@@ -904,7 +991,103 @@
             </nav>
         </div>
     </div>
+    <!-- login -->
+    <div class="modal fade" id="loginCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-re">
+                <div class="modal-header modal-header-re">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title" id="exampleModalCenterTitle">登入 | LOGIN</h5>
+                </div>
+                <div class="modal-body">
+                    <form class="mt-3">
+                        <div class="form-group mb-3">
+                            <input type="text" class="form-control form-control-re" id="account-name"
+                                placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control form-control-re" id="password-text" placeholder="Password">
+                        </div>
+                        <input type="checkbox"> 記住帳號
+                    </form>
+                </div>
+                <div class="modal-footer modal-footer-re">
+                    <button type="button" class="btn btn-primary btn-primary-re">登入</button>
+                </div>
+                <div class="modal-footer2-re mt-3">
+                    <a class="mr-5" data-toggle="modal" data-target="#lostPassword" id="passwordbtn">忘記密碼</a>
+                    <a data-toggle="modal" data-target="#registerCenter" id="registerbtn">註冊帳號</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- lost password -->
+    <div class="modal fade" id="lostPassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-re">
+                <div class="modal-header modal-header-re">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title" id="exampleModalCenterTitle">找回密碼</h5>
+                </div>
+                <div class="modal-body">
+                    <form class="mt-3">
+                        <div class="form-group mb-3">
+                            <p>請輸入您註冊的電子郵件，您將會在電子郵件信箱中收到重設密碼的連結。</p>
+                            <input type="text" class="form-control form-control-re" id="account-name"
+                                placeholder="Email">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer modal-footer-re">
+                    <button type="button" class="btn btn-primary btn-primary-re">送出</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- register -->
+    <div class="modal fade" id="registerCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-re">
+                <div class="modal-header modal-header-re">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title" id="exampleModalCenterTitle">註冊 | REGISTER</h5>
+                </div>
+                <div class="modal-body">
+                    <form class="mt-3">
+                        <div class="form-group mb-3">
+                            <input type="text" class="form-control form-control-re" id="account-name"
+                                placeholder="User Name">
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="text" class="form-control form-control-re" id="account-name"
+                                placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control form-control-re" id="password-text" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control form-control-re" id="password-text"
+                                placeholder="Repeat Password">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer modal-footer-re">
+                    <button type="button" class="btn btn-primary btn-primary-re">註冊</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer>
         <p>Copyright© TempleTrip.tw</p>
     </footer>
@@ -941,8 +1124,36 @@
             $(this).toggleClass('active');
         });
 
+        // overlayNav進場
+        $('.nav_burgurBar_img').click(function () {
+
+            let navPosition = {
+                transform: 'translateY(0)'
+            }
+
+            $(".nav_overlayNav").css(navPosition);
+        })
+
+        // overlayNav退場
+        $('.nav_closeBtn').click(function () {
+
+            let navPosition = {
+                transform: 'translateY(-2500px)',
+                transition: '.7s'
+            }
+
+            $(".nav_overlayNav").css(navPosition);
+        })
 
 
+        //Login hide
+        $('#registerbtn').click(function () {
+            $('#loginCenter').modal('hide');
+        })
+
+        $('#passwordbtn').click(function () {
+            $('#loginCenter').modal('hide');
+        })
     </script>
 </body>
 
