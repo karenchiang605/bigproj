@@ -25,6 +25,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="./css/mybtn.css">
     <style>
         body {
             font-family: 'Faustina', serif;
@@ -434,8 +435,8 @@
                     </div>
                 </div>
                 <div class="d-none d-lg-flex justify-content-end pt-3 ">
-                    <div class="shop_btn mr-3">收藏</div>
-                    <div class="shop_btn ">加入購物車</div>
+                    <div class="mybtn_like mr-3" data-toggle="mybtn"></div>
+                    <div class="mybtn_cart_add" data-toggle="mybtn"></div>
                 </div>
             </div>
         </div>
@@ -741,7 +742,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-touchspin/4.3.0/jquery.bootstrap-touchspin.min.js"
         integrity="sha512-0hFHNPMD0WpvGGNbOaTXP0pTO9NkUeVSqW5uFG2f5F9nKyDuHE3T4xnfKhAhnAZWZIO/gBLacwVvxxq0HuZNqw=="
         crossorigin="anonymous"></script>
-
+    <script src="./js/mybtn.js"></script>
 
     <script>
         $("input[name='demo3']").TouchSpin({

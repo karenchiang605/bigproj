@@ -167,10 +167,7 @@ h3 {
             color: #fff;
 }
 
-.trip_btn1:hover {
-    background-color: #dd745e;
 
-}
 
 .trip_text2 {
     font-size: 24px;
@@ -332,7 +329,22 @@ h3 {
 }    
 .trip_modal{
     background-color: #fff;
+    border-radius: 20px;
 }
+
+
+#tripModalCommentLong .modal-body{
+    height: 90vh;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+#tripModalCommentLong .modal-body::-webkit-scrollbar {
+    display: none;
+}
+  
+
 
 @media (min-width: 992px) {
     .trip_container {
@@ -349,6 +361,11 @@ h3 {
         width: auto;
         right: 50px;
     }
+    .trip_btn1:hover,
+    .trip_btn1.active {
+        background-color: #dd745e;
+    
+    }
 }
 
 @media (max-width: 991px) {
@@ -363,6 +380,10 @@ h3 {
     .trip_btn1{
        font-size: 16px;
        padding: 3px 15px;
+    }
+    .trip_btn1.active{
+        background-color: #dd745e;
+    
     }
 
     .tripc_item_body_price span {

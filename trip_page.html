@@ -23,6 +23,7 @@
         href="https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./css/trip_page.css">
+    <link rel="stylesheet" href="./css/mybtn.css">
 
 </head>
 
@@ -269,8 +270,8 @@
                         <div class="trip_text2">NTD <span id="trip_calculate1">2,400</span>元</div>
                     </div>
                     <div class="d-none d-lg-flex justify-content-end pt-4">
-                        <div class="trip_btn3 mr-3">收藏</div>
-                        <div class="trip_btn3 pr-3">加入購物車</div>
+                        <div class="mybtn_like mr-3" data-toggle="mybtn"></div>
+                        <div class="mybtn_cart_add pr-3" data-toggle="mybtn"></div>
                     </div>
                 </div>
             </div>
@@ -456,27 +457,28 @@
     </div>
 
     <!-- Button trigger modal -->
-    <div class="trip_day mb-4 py-2 d-lg-none d-block" data-toggle="modal" data-target="#exampleModalLong">查看全部評價</div>
+    <div class="trip_day mb-4 py-2 d-lg-none d-block" data-toggle="modal" data-target="#tripModalCommentLong">查看全部評價
+    </div>
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-        aria-hidden="true">
+    <div class="modal fade" id="tripModalCommentLong" tabindex="-1" role="dialog"
+        aria-labelledby="tripModalCommentLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content trip_container1">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">全部評價</h5>
+                    <h5 class="modal-title" id="tripModalCommentLongTitle">全部評價</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body no-gutters pl-2">
-                    <div class="row d-lg-none d-block d-flex mt-4 mx-0">
-                        <div class="col-2 pl-0">
+                <div class="modal-body mx-4">
+                    <div class="row d-lg-none d-block d-flex trip_modal border pt-3 mb-3">
+                        <div class="col-3">
                             <div class="trip_gb">W</div>
                         </div>
-                        <div class="col-10 border trip_modal pr-3">
+                        <div class="col-9">
                             <div class="pl-1">
                                 <div class="py-2">WAN CHEN</div>
-                                <div class="d-flex justify-content-start pb-4">
+                                <div class="d-flex justify-content-start pb-2">
                                     <div class="d-flex justify-content-start pr-3">
                                         <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
                                         <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
@@ -487,19 +489,19 @@
                                     <div>超讚</div>
                                 </div>
                             </div>
-                            <div class="trip_gbtext pb-4">先上林家宮保第官網預約導覽時間，再上KLOOK購買套票（導覽+古裝體驗），
-                                建議可以挑不要太晚的導覽，因為導覽結束後還能好好再到處拍照，很好拍超
+                            <div class="trip_gbtext pb-4">
+                                先上林家宮保第官網預約導覽時間，再上KLOOK購買套票（導覽+古裝體驗），建議可以挑不要太晚的導覽，因為導覽結束後還能好好再到處拍照，超
                                 好拍照；古裝體驗，有很多服飾，</div>
                         </div>
                     </div>
-                    <div class="row d-lg-none d-block d-flex mt-4 mx-3">
-                        <div class="col-2 pl-1">
+                    <div class="row d-lg-none d-block d-flex trip_modal  border pt-3 mb-3">
+                        <div class="col-3">
                             <div class="trip_gb">W</div>
                         </div>
-                        <div class="col-10">
+                        <div class="col-9">
                             <div class="pl-1">
                                 <div class="py-2">WAN CHEN</div>
-                                <div class="d-flex justify-content-start pb-4">
+                                <div class="d-flex justify-content-start pb-2">
                                     <div class="d-flex justify-content-start pr-3">
                                         <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
                                         <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
@@ -510,19 +512,19 @@
                                     <div>超讚</div>
                                 </div>
                             </div>
-                            <div class="trip_gbtext pb-4">先上林家宮保第官網預約導覽時間，再上KLOOK購買套票（導覽+古裝體驗），
-                                建議可以挑不要太晚的導覽，因為導覽結束後還能好好再到處拍照，很好拍超
+                            <div class="trip_gbtext pb-4">
+                                先上林家宮保第官網預約導覽時間，再上KLOOK購買套票（導覽+古裝體驗），建議可以挑不要太晚的導覽，因為導覽結束後還能好好再到處拍照，超
                                 好拍照；古裝體驗，有很多服飾，</div>
                         </div>
                     </div>
-                    <div class="row d-lg-none d-block d-flex mt-4 mx-3">
-                        <div class="col-2 pl-1">
+                    <div class="row d-lg-none d-block d-flex trip_modal  border pt-3 mb-3">
+                        <div class="col-3">
                             <div class="trip_gb">W</div>
                         </div>
-                        <div class="col-10">
+                        <div class="col-9">
                             <div class="pl-1">
                                 <div class="py-2">WAN CHEN</div>
-                                <div class="d-flex justify-content-start pb-4">
+                                <div class="d-flex justify-content-start pb-2">
                                     <div class="d-flex justify-content-start pr-3">
                                         <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
                                         <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
@@ -533,14 +535,81 @@
                                     <div>超讚</div>
                                 </div>
                             </div>
-                            <div class="trip_gbtext pb-4">先上林家宮保第官網預約導覽時間，再上KLOOK購買套票（導覽+古裝體驗），
-                                建議可以挑不要太晚的導覽，因為導覽結束後還能好好再到處拍照，很好拍超
+                            <div class="trip_gbtext pb-4">
+                                先上林家宮保第官網預約導覽時間，再上KLOOK購買套票（導覽+古裝體驗），建議可以挑不要太晚的導覽，因為導覽結束後還能好好再到處拍照，超
                                 好拍照；古裝體驗，有很多服飾，</div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary trip_like_btn" data-dismiss="modal">Close</button>
+                    <div class="row d-lg-none d-block d-flex trip_modal  border pt-3 mb-3">
+                        <div class="col-3">
+                            <div class="trip_gb">W</div>
+                        </div>
+                        <div class="col-9">
+                            <div class="pl-1">
+                                <div class="py-2">WAN CHEN</div>
+                                <div class="d-flex justify-content-start pb-2">
+                                    <div class="d-flex justify-content-start pr-3">
+                                        <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
+                                        <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
+                                        <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
+                                        <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
+                                        <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
+                                    </div>
+                                    <div>超讚</div>
+                                </div>
+                            </div>
+                            <div class="trip_gbtext pb-4">
+                                先上林家宮保第官網預約導覽時間，再上KLOOK購買套票（導覽+古裝體驗），建議可以挑不要太晚的導覽，因為導覽結束後還能好好再到處拍照，超
+                                好拍照；古裝體驗，有很多服飾，</div>
+                        </div>
+                    </div>
+                    <div class="row d-lg-none d-block d-flex trip_modal  border pt-3 mb-3">
+                        <div class="col-3">
+                            <div class="trip_gb">W</div>
+                        </div>
+                        <div class="col-9">
+                            <div class="pl-1">
+                                <div class="py-2">WAN CHEN</div>
+                                <div class="d-flex justify-content-start pb-2">
+                                    <div class="d-flex justify-content-start pr-3">
+                                        <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
+                                        <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
+                                        <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
+                                        <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
+                                        <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
+                                    </div>
+                                    <div>超讚</div>
+                                </div>
+                            </div>
+                            <div class="trip_gbtext pb-4">
+                                先上林家宮保第官網預約導覽時間，再上KLOOK購買套票（導覽+古裝體驗），建議可以挑不要太晚的導覽，因為導覽結束後還能好好再到處拍照，超
+                                好拍照；古裝體驗，有很多服飾，</div>
+                        </div>
+                    </div>
+                    <div class="row d-lg-none d-block d-flex trip_modal  border pt-3 mb-3">
+                        <div class="col-3">
+                            <div class="trip_gb">W</div>
+                        </div>
+                        <div class="col-9">
+                            <div class="pl-1">
+                                <div class="py-2">WAN CHEN</div>
+                                <div class="d-flex justify-content-start pb-2">
+                                    <div class="d-flex justify-content-start pr-3">
+                                        <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
+                                        <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
+                                        <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
+                                        <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
+                                        <div><i class="fas fa-star" style="color: #cc543a;"></i></div>
+                                    </div>
+                                    <div>超讚</div>
+                                </div>
+                            </div>
+                            <div class="trip_gbtext pb-4">
+                                先上林家宮保第官網預約導覽時間，再上KLOOK購買套票（導覽+古裝體驗），建議可以挑不要太晚的導覽，因為導覽結束後還能好好再到處拍照，超
+                                好拍照；古裝體驗，有很多服飾，</div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -978,6 +1047,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-touchspin/4.3.0/jquery.bootstrap-touchspin.min.js"
         integrity="sha512-0hFHNPMD0WpvGGNbOaTXP0pTO9NkUeVSqW5uFG2f5F9nKyDuHE3T4xnfKhAhnAZWZIO/gBLacwVvxxq0HuZNqw=="
         crossorigin="anonymous"></script>
+    <script src="./js/mybtn.js"></script>
 
 
 
@@ -1195,8 +1265,9 @@
         })
 
 
-
-
+        $(".trip_btn1").click(function () {
+            $(this).toggleClass("active");
+        });
 
 
 
