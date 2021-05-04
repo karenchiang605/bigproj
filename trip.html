@@ -200,7 +200,7 @@
             width: 50%;
         }
 
-        .trip_item_body_more_mobile:hover {
+        .trip_item_body_more_mobile.active {
             background-color: #dd745e;
         }
 
@@ -208,7 +208,7 @@
             border: none;
             border-radius: 50px;
             font-size: 18px;
-            color: #c0c0c0;
+            color: #707070;
             font-weight: bold;
             padding: 8px 20px;
 
@@ -354,15 +354,21 @@
             color: #FFF;
         }
 
-        .trip_like:hover,
+
+        .trip_like i:hover {
+            font-weight: 900;
+            font-size: 25px;
+            color: #cc543a;
+
+        }
+
         .trip_like.active {
             background-color: #cc543a;
         }
 
-        .trip_like:hover i,
         .trip_like.active i {
             font-weight: 900;
-            font-size: 20px;
+            font-size: 23px;
             color: #FFF;
         }
 
@@ -389,7 +395,7 @@
 
         .trip_like_mobile.active i {
             font-weight: 900;
-            font-size: 18px;
+            font-size: 16px;
             color: #FFF;
         }
     </style>
@@ -496,7 +502,7 @@
     </nav>
     <div class="breadcrumb_style   backgroundimg_1">
         <div class="d-flex flex-wrap breadcrumb_style_1 ">
-            <a href="" class="astlyep">Home</a>
+            <a href="" class="astlyep">首頁</a>
             <!-- 共用雲端找箭頭icon-->
             <img src="./img/nav_arrow_right.svg">
             聖地行旅
@@ -711,7 +717,7 @@
                     </div>
                 </div>
             </div>
-            <nav class="trip_page position-relative d-flex justify-content-end" aria-label="Page navigation example">
+            <nav class="trip_page position-relative d-flex justify-content-center" aria-label="Page navigation example">
                 <ul class="pagination ">
                     <li class="page-item"><a class="page-link trip_page_item1" href="#">1</a></li>
                     <li class="page-item"><a class="page-link trip_page_item1" href="#">2</a></li>
@@ -1121,7 +1127,9 @@
         $(".trip_like_mobile").click(function () {
             $(this).toggleClass('active');
         });
-
+        $(".trip_item_body_more_mobile").click(function () {
+            $(this).toggleClass('active');
+        })
         // overlayNav進場
         $('.nav_burgurBar_img').click(function () {
 
