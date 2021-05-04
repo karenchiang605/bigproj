@@ -45,6 +45,10 @@
                 position: relative;
             }
 
+            .trip_body_bg img {
+                position: relative;
+            }
+
             .trip_body_bg:before {
                 content: '';
                 display: block;
@@ -303,6 +307,7 @@
         .trip_page_item {
             color: #707070;
             font-size: 24px;
+            background-color: transparent;
         }
 
         .trip_page_item:hover,
@@ -316,6 +321,7 @@
         .trip_page_item1 {
             color: #707070;
             font-size: 24px;
+            background-color: transparent;
         }
 
         .trip_page_item1:focus {
@@ -488,18 +494,17 @@
 
         <hr class="nav_navline">
     </nav>
+    <div class="breadcrumb_style   backgroundimg_1">
+        <div class="d-flex flex-wrap breadcrumb_style_1 ">
+            <a href="" class="astlyep">Home</a>
+            <!-- 共用雲端找箭頭icon-->
+            <img src="./img/nav_arrow_right.svg">
+            聖地行旅
+        </div>
+    </div>
     <div class="container-fluid trip_body_bg">
-
         <!-- mobile -->
         <div class="container d-block d-lg-none">
-            <div class="breadcrumb_style   backgroundimg_1">
-                <div class="d-flex flex-wrap breadcrumb_style_1 ">
-                    <a href="" class="astlyep">Home</a>
-                    <!-- 共用雲端找箭頭icon-->
-                    <img src="./img/nav_arrow_right.svg">
-                    商店
-                </div>
-            </div>
             <div class="row px-3 d-flex justify-content-between">
                 <select class="trip_item_body_more1 shadow mb-2 bg-white text-center" id="exampleFormControlSelect1">
                     <option>行程分類</option>
@@ -706,7 +711,7 @@
                     </div>
                 </div>
             </div>
-            <nav class="trip_page position-relative d-flex justify-content-center" aria-label="Page navigation example">
+            <nav class="trip_page position-relative d-flex justify-content-end" aria-label="Page navigation example">
                 <ul class="pagination ">
                     <li class="page-item"><a class="page-link trip_page_item1" href="#">1</a></li>
                     <li class="page-item"><a class="page-link trip_page_item1" href="#">2</a></li>
@@ -719,14 +724,6 @@
 
         <!-- 網頁 -->
         <div class="trip_container container-fluid px-lg-5 d-none d-lg-block ">
-            <div class="breadcrumb_style   backgroundimg_1">
-                <div class="d-flex flex-wrap breadcrumb_style_1 ">
-                    <a href="" class="astlyep">Home</a>
-                    <!-- 共用雲端找箭頭icon-->
-                    <img src="./img/nav_arrow_right.svg">
-                    商店
-                </div>
-            </div>
             <div class="row">
                 <div class="col-3">
                     <div style="max-width:210px;">
@@ -772,7 +769,8 @@
                     </div>
                 </div>
                 <div class="col-9">
-                    <div class="trip_sort d-flex justify-content-end mb-5">
+                    <div class="trip_sort d-flex justify-content-between  mb-5">
+                        <h3>熱門行程</h3>
                         <div class="form-inline">
                             <label class="pr-3" for="exampleFormControlSelect1">排序方式</label>
                             <select class="form-control bg-transparent" id="exampleFormControlSelect1">

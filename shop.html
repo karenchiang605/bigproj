@@ -163,6 +163,7 @@
         .shop_page_item {
             color: #707070;
             font-size: 24px;
+            background-color: transparent;
         }
 
         .shop_page_item:hover,
@@ -176,6 +177,7 @@
         .shop_page_item1 {
             color: #707070;
             font-size: 24px;
+            background-color: transparent;
         }
 
         .shop_page_item1:focus {
@@ -280,6 +282,23 @@
                 font-size: 20px;
                 color: #FFF;
             }
+
+            .shop_body_bg {
+                position: relative;
+            }
+
+            .shop_body_bg:before {
+                content: '';
+                display: block;
+                width: 208px;
+                height: 386px;
+                position: absolute;
+                bottom: 600px;
+                left: 300px;
+                background-size: cover;
+                background-image: url(/img/nav_shop.png);
+                opacity: 0.39;
+            }
         }
 
 
@@ -312,6 +331,13 @@
                 overflow-x: auto;
             }
 
+            .shop_re_text {
+                font-size: 20px;
+            }
+
+            .shop_re_price {
+                font-size: 20px;
+            }
 
         }
     </style>
@@ -331,11 +357,17 @@
                 </g>
             </svg>
         </div>
-
         <div class="nav_logo_mobile">
             <img src="./img/nav_logo_mobile.svg" alt="">
         </div>
-
+    </div>
+    <div class="breadcrumb_style backgroundimg_1">
+        <div class="d-flex flex-wrap breadcrumb_style_1 ">
+            <a href="" class="astlyep">Home</a>
+            <!-- 共用雲端找箭頭icon-->
+            <img src="./img/nav_arrow_right.svg">
+            祈福商店
+        </div>
     </div>
     <div class="nav_overlayNav">
         <div class="nav_closeBtn mb-4">
@@ -415,16 +447,8 @@
         </div>
         <hr class="nav_navline">
     </nav>
-    <div class="container-fluid">
+    <div class="container-fluid shop_body_bg">
         <div class="shop_container container-fluid px-lg-5 px-3 px-0">
-            <div class="breadcrumb_style   backgroundimg_1">
-                <div class="d-flex flex-wrap breadcrumb_style_1 ">
-                    <a href="" class="astlyep">Home</a>
-                    <!-- 共用雲端找箭頭icon-->
-                    <img src="./img/nav_arrow_right.svg">
-                    商店
-                </div>
-            </div>
             <div class="d-flex justify-content-between d-block   d-lg-none">
                 <select class="shop_item_body_more shadow mb-2 bg-white text-center" id="exampleFormControlSelect1">
                     <option>商品分類</option>
@@ -490,7 +514,7 @@
                 </div>
                 <div class="col-lg-9">
                     <div class="d-lg-flex justify-content-between d-none d-lg-block">
-                        <h3>熱門商品 |</h3>
+                        <h3>熱門商品</h3>
                         <div class="shop_sort d-flex justify-content-end mb-5 ">
                             <div class="form-inline">
                                 <label class="pr-3" for="exampleFormControlSelect1">排序方式</label>
@@ -590,6 +614,51 @@
                             </div>
                             <div class="shop_re_text1">Charlene 創作 </div>
                             <div class="pb-5 shop_re_price"><span>NTD 250</span>元</div>
+                            <div
+                                class="shop_like position-absolute d-flex justify-content-center align-items-center mr-lg-4 mt-lg-2 mr-3 mt-1">
+                                <i class="far fa-heart"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-6">
+                            <div class="shop_re_img mb-2">
+                                <img src="/img/013.png" width="100%" />
+                                <div class="shop_re_more">
+                                </div>
+                            </div>
+                            <div class="shop_re_text pt-1 pb-3">藝術廟宇戒指
+                            </div>
+                            <div class="shop_re_text1">TIMBEE 限量版 </div>
+                            <div class="pb-5 shop_re_price"><span>NTD 1,109</span>元</div>
+                            <div
+                                class="shop_like position-absolute d-flex justify-content-center align-items-center mr-lg-4 mt-lg-2 mr-3 mt-1">
+                                <i class="far fa-heart"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-6">
+                            <div class="shop_re_img mb-2">
+                                <img src="/img/011.png" width="100%" />
+                                <div class="shop_re_more">
+                                </div>
+                            </div>
+                            <div class="shop_re_text pt-1 pb-3">媽祖胸針
+                            </div>
+                            <div class="shop_re_text1">Charlene 創作 </div>
+                            <div class="pb-5 shop_re_price"><span>NTD 250</span>元</div>
+                            <div
+                                class="shop_like position-absolute d-flex justify-content-center align-items-center mr-lg-4 mt-lg-2 mr-3 mt-1">
+                                <i class="far fa-heart"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-6">
+                            <div class="shop_re_img mb-2">
+                                <img src="/img/013.png" width="100%" />
+                                <div class="shop_re_more">
+                                </div>
+                            </div>
+                            <div class="shop_re_text pt-1 pb-3">藝術廟宇戒指
+                            </div>
+                            <div class="shop_re_text1">TIMBEE 限量版 </div>
+                            <div class="pb-5 shop_re_price"><span>NTD 1,109</span>元</div>
                             <div
                                 class="shop_like position-absolute d-flex justify-content-center align-items-center mr-lg-4 mt-lg-2 mr-3 mt-1">
                                 <i class="far fa-heart"></i>

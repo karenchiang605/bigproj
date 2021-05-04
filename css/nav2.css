@@ -75,7 +75,7 @@ body {
 }
 /* 為了固定 nav 的高度, 所以固定logo 的寬度 @karen */
 .nav_navbar_com_container > img {
-    width:75px;
+    width:85px;
 }
 
 .nav_navbar {
@@ -165,7 +165,7 @@ nav img {
     content: "SERVICE";
 }
 .nav_trip::before{
-    content: "聖地巡禮";
+    content: "聖地行旅";
 }
 .nav_trip:hover::before{
     content: "TRIP";
