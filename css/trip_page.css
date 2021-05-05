@@ -19,6 +19,47 @@ h3 {
     transform: scale(1.1, 1.1);
 }
 
+.trip_like_mobile {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #cc543a;
+    border-radius: 50%;
+    top: 15px;
+    right: 15px;
+    font-size: 18px;
+    color: #cc543a;
+    background-color: #fff;
+}
+.trip_like_mobile .fas {
+    font-size: 18px;
+    color: #FFF;
+}
+
+.trip_like_mobile.active {
+    background-color: #cc543a;
+}
+
+
+.trip_like_mobile.active i {
+    font-weight: 900;
+    font-size: 16px;
+    color: #FFF;
+}
+
+.trip_like_mobile.active {
+    background-color: #cc543a;
+}
+
+
+.trip_like_mobile.active i {
+    font-weight: 900;
+    font-size: 16px;
+    color: #FFF;
+}
+
+
+
+
 .trip-breadcrumb {
     font-size: 18px;
 }
@@ -274,6 +315,8 @@ h3 {
 
 .trip_fixed_bottom1 {
     width: 50%;
+    font-weight: bold;
+    font-size: 18px;
 
 }
 
@@ -369,10 +412,7 @@ h3 {
 }
 
 @media (max-width: 991px) {
-    h3 {
-        font-size: 24px;
-    }
-
+    
     .trip_scrolling_wrapper {
         overflow-x: auto;
     }
@@ -396,6 +436,18 @@ h3 {
     .trip_item_body_title {
         font-weight: bold;
         font-size: 18px;
+    }
+    .trip_gb {
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        padding-top: 5px;
+        font-size: 20px;
+        
+    }
+
+    .trip_gbtext{
+        font-size: 14px;
     }
 
     .trip_btn2,

@@ -56,6 +56,44 @@
 
         }
 
+        .shop_like_mobile {
+            width: 32px;
+            height: 32px;
+            border: 2px solid #cc543a;
+            border-radius: 50%;
+            top: 15px;
+            right: 15px;
+            font-size: 18px;
+            color: #cc543a;
+            background-color: #fff;
+        }
+
+        .shop_like_mobile .fas {
+            font-size: 18px;
+            color: #FFF;
+        }
+
+        .shop_like_mobile.active {
+            background-color: #cc543a;
+        }
+
+
+        .shop_like_mobile.active i {
+            font-weight: 900;
+            font-size: 16px;
+            color: #FFF;
+        }
+
+        .shop_like_mobile.active {
+            background-color: #cc543a;
+        }
+
+
+        .shop_like_mobile.active i {
+            font-weight: 900;
+            font-size: 16px;
+            color: #FFF;
+        }
 
         .breadcrumb-item {
             font-size: 18px;
@@ -413,7 +451,11 @@
                 </div>
             </div>
             <div class="col-lg-5">
-                <h3 class="shop_titletext mt-lg-0 mt-5">大甲媽祖鎮瀾宮聯名款睡睡平安記憶枕</h3>
+                <div
+                    class="shop_like_mobile position-absolute d-flex justify-content-center align-items-center d-lg-none">
+                    <i class="far fa-heart"></i>
+                </div>
+                <h3 class="shop_titletext mt-lg-0 mt-4">大甲媽祖鎮瀾宮聯名款</h3>
                 <h3 class="shop_titletext pt-2">聯名款_睡睡平安記憶枕</h3>
                 <div class="shop_text1 py-4">2021年限定 Fulux x 大甲鎮瀾宮聯名款 </div>
                 <div class=" shop_text pb-5">枕芯添加大甲媽香灰， <br>以鎮瀾宮濟世為懷的精神為出發點，<br>結合專業寢具精品，<br> 願您擁有「睡睡平安」的每一天!
@@ -428,11 +470,12 @@
                     </div>
                 </div>
                 <div class="shop_fixed_bottom w-100 d-flex justify-content-between py-2 px-2 fixed-bottom d-lg-none ">
-                    <div class="shop_fixed_bottom1 py-2"><i class="far fa-heart px-2" style="color: #fff;"></i>收藏</div>
-                    <div class="shop_fixed_bottom_line"></div>
+                    <!-- <div class="shop_fixed_bottom1 py-2"><i class="far fa-heart px-2" style="color: #fff;"></i>收藏</div> -->
                     <div class="shop_fixed_bottom1 py-2"><i class="fas fa-shopping-cart px-2"
                             style="color: #fff;"></i>加入購物車
                     </div>
+                    <div class="shop_fixed_bottom_line"></div>
+                    <div class="shop_fixed_bottom1 py-2">前往結帳</div>
                 </div>
                 <div class="d-none d-lg-flex justify-content-end pt-3 ">
                     <div class="mybtn_like mr-3" data-toggle="mybtn"></div>
@@ -764,6 +807,11 @@
         $(".shop_btn").click(function () {
             $(this).toggleClass("active");
         });
+
+        $(".shop_like_mobile").click(function () {
+            $(this).toggleClass("active");
+        });
+
 
 
 

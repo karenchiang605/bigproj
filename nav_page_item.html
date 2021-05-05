@@ -23,19 +23,18 @@
 
 
     <style>
-        .breadcrumb-item a {
-            color: #707070;
-        }
-
-        .trip_page-item {
+        .nav_page_item {
             color: #707070;
             font-size: 24px;
+            background-color: transparent;
+            padding: .5rem 1rem;
+            border: 1px solid #cdcdcd;
         }
 
-        .trip_page-item:hover {
+
+        .nav_page_item:hover {
             background-color: #c0c0c0;
             color: #FFF;
-            font-size: 24px;
             font-weight: bold;
         }
     </style>
@@ -43,22 +42,15 @@
 
 <body>
 
-    <div>
-        <nav aria-label="breadcrumb">
-            <ol class="trip-breadcrumb breadcrumb p-0 bg-transparent d-flex justify-content-start">
-                <li class="breadcrumb-item d-flex align-items-center"><a href="#">Home</a></li>
-                <li class="breadcrumb-item d-flex align-items-center active" aria-current="page">行旅</li>
-            </ol>
-        </nav>
-    </div>
 
-    <nav class="trip_page position-relative d-flex justify-content-center" aria-label="Page navigation example">
+
+    <nav class="nav_page position-relative d-flex justify-content-center" aria-label="Page navigation example">
         <ul class="pagination ">
-            <li class="page-item"><a class="page-link trip_page-item" href="#">1</a></li>
-            <li class="page-item"><a class="page-link trip_page-item" href="#">2</a></li>
-            <li class="page-item"><a class="page-link trip_page-item" href="#">3</a></li>
-            <li class="page-item"><a class="page-link trip_page-item" href="#">4</a></li>
-            <li class="page-item"><a class="page-link trip_page-item" href="#">></a></li>
+            <li class="page-item"><a class="page-link nav_page_item" href="#">1</a></li>
+            <li class="page-item"><a class="page-link nav_page_item" href="#">2</a></li>
+            <li class="page-item"><a class="page-link nav_page_item" href="#">3</a></li>
+            <li class="page-item"><a class="page-link nav_page_item" href="#">4</a></li>
+            <li class="page-item"><a class="page-link nav_page_item" href="#">></a></li>
         </ul>
     </nav>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
