@@ -361,7 +361,7 @@ function getPageLink($page) {
         }
 
 
-        .trip_btn1 {
+        .trip_btn1 a{
             background-color: #cc543a;
             border-radius: 50px;
             font-size: 18px;
@@ -370,9 +370,10 @@ function getPageLink($page) {
             padding: 5px 15px;
             color: #fff;
             width: 40%;
+            text-decoration: none;
         }
 
-        .trip_btn1:hover {
+        .trip_btn1:hover a{
             background-color: #dd745e;
 
         }
@@ -405,6 +406,7 @@ function getPageLink($page) {
             background-color: transparent;
             padding: .5rem 1rem;
             border: 1px solid #cdcdcd;
+            
         }
 
         .trip_page_item:hover,
@@ -950,7 +952,7 @@ if(count($trips) > 0) {
                                     <div class="tripc_item_body_price mx-4 pt-1"><span>NTD <?=number_format($trip['price'], 0, ".", ",")?></span> 元起</div>
 
                                     <div class="d-lg-flex justify-content-end">
-                                        <div class="trip_btn1 mr-3 mt-1">查看詳情</div>
+                                        <div class="trip_btn1 mr-3 mt-1"><a <?=(isset($_GET['id']))?> href="trip_page.php?id={行程id}">查看詳情</a></div>
                                     </div>
                                     <div
                                         class="trip_like position-absolute d-flex justify-content-center align-items-center mr-2 mt-2">
