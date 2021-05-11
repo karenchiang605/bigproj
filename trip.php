@@ -497,6 +497,14 @@ function getPageLink($page) {
             font-size: 16px;
             color: #FFF;
         }
+
+        .trip_result{
+            font-size: 18px;
+            font-weight: bold;
+            color:#707070;
+            
+
+        }
     </style>
 </head>
 
@@ -911,8 +919,7 @@ if(count($trips) > 0) {
                     </div>
                 </div>
                 <div class="col-9">
-                    <div class="trip_sort d-flex justify-content-between  mb-5">
-                        <h3>熱門行程</h3>
+                    <div class="trip_sort d-flex justify-content-end mb-5">
                         <div class="form-inline">
                             <label class="pr-3" for="exampleFormControlSelect1">排序方式</label>
                             <select class="form-control bg-transparent" id="trip_order">
@@ -956,7 +963,7 @@ if(count($trips) > 0) {
     }
 } else {
 ?>
-<div class="text-center w-100">查無行程</div>
+<div class="trip_result text-center w-100">不好意思，我們沒有找到相關的行程</div>
 <?php
 }
 ?>
