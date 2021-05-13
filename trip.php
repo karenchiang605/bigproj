@@ -263,7 +263,7 @@ function getPageLink($page) {
             background-color: #dd745e;
         }
 
-        .trip_item_body_more_mobile {
+        .trip_item_body_more_mobile a{
             font-size: 16px;
             background-color: #cc543a;
             color: #fff;
@@ -271,9 +271,10 @@ function getPageLink($page) {
             padding: 5px 10px;
             text-align: center;
             width: 50%;
+            text-decoration: none;
         }
 
-        .trip_item_body_more_mobile.active {
+        .trip_item_body_more_mobile.active a{
             background-color: #dd745e;
         }
 
@@ -507,6 +508,8 @@ function getPageLink($page) {
             
 
         }
+
+
     </style>
 </head>
 
@@ -692,7 +695,8 @@ if(count($trips) > 0) {
                         </div>
                         <div class="tripc_item_body_price_mobile mx-3"><span>NTD <?=number_format($trip['price'],0,".",",")?></span> 元起</div>
                         <div class="mb-1 d-flex justify-content-end">
-                            <div class="mr-3 my-2 trip_item_body_more_mobile">查看詳情</div>
+                            <div class="mr-3 my-2 trip_item_body_more_mobile"><a href="trip_page.php?id=<?=$trip['id']?>">查看詳情</a></div>
+                            <div class="mr-3 my-2 trip_item_body_more_mobile"><a href="trip_page.php?id=<?=$trip['id']?>">查看詳情</a></div>
                         </div>
                         <div
                             class="trip_like_mobile position-absolute d-flex justify-content-center align-items-center mr-2 mt-2">
@@ -704,7 +708,7 @@ if(count($trips) > 0) {
     }
 } else {
 ?>
-                <div class="text-center w-100">查無行程</div>
+                <div class="trip_result text-center">不好意思，我們沒有找到相關的行程</div>
 <?php
 }
 ?>
@@ -952,7 +956,7 @@ if(count($trips) > 0) {
                                     <div class="tripc_item_body_price mx-4 pt-1"><span>NTD <?=number_format($trip['price'], 0, ".", ",")?></span> 元起</div>
 
                                     <div class="d-lg-flex justify-content-end">
-                                        <div class="trip_btn1 mr-3 mt-1"><a <?=(isset($_GET['id']))?> href="trip_page.php?id={行程id}">查看詳情</a></div>
+                                        <div class="trip_btn1 mr-3 mt-1"><a href="trip_page.php?id=<?=$trip['id']?>">查看詳情</a></div>
                                     </div>
                                     <div
                                         class="trip_like position-absolute d-flex justify-content-center align-items-center mr-2 mt-2">
