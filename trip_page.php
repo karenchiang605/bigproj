@@ -1,12 +1,13 @@
 <?php
-
+session_start();
+// var_dump($_SESSION);
 require __DIR__ . "/__connect_db.php";
 
 // SELECT * FROM trip WHERE id = ''
-$sql = "SELECT * FROM trips WHERE id = '".$_GET['id']."'";
-$stmt = $pdo->prepare($sql);
-$stmt->execute();
-$trip = $stmt->fetch(PDO::FETCH_ASSOC);
+$sql = "SELECT * FROM trips WHERE id = '".$_GET['id']."'"; //組合SQL指令
+$stmt = $pdo->prepare($sql); //預處理SQL
+$stmt->execute(); //執行SQL
+$trip = $stmt->fetch(PDO::FETCH_ASSOC); //取資料
 
 
 $sql = "SELECT * FROM trips WHERE cat = '熱門行程' LIMIT 0, 6";
@@ -59,7 +60,9 @@ for($i=0;$i<count($hot_trips);$i++) {
 
 <body>
     <input type="hidden" name="price" id="trip_price" value="<?=$trip['price']?>">
-    <input type="hidden" name="id" id="trip_id" value="<?=$trip['id']?>">
+    <input type="hidden" name="trip_id" id="trip_id" value="<?=$trip['id']?>">
+    <input type="hidden" name="trip_name" id="trip_name" value="<?=$trip['title2']?>">
+    <input type="hidden" name="trip_image" id="trip_image" value="<?=$trip['thumbnail']?>">
     <div class="nav_burgurBar">
         <div class="nav_burgurBar_img">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" viewBox="0 0 25 20">
@@ -240,7 +243,8 @@ for($i=0;$i<count($hot_trips);$i++) {
                             <div class="row  no-gutters pt-3">
                                 <div class="col-6 trip_text1">查看可預訂日期</div>
                                 <div class="col-6">
-                                    <input class="trip_input_date pr-4" type="date" id="date_today" min="2021-04-19">
+                                    <input class="trip_input_date w-100" type="date" id="date_today" min="2021-04-19">
+                                    <div class="invalid-feedback">造訪日期未填喔!!</div>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between py-4">
@@ -299,9 +303,7 @@ for($i=0;$i<count($hot_trips);$i++) {
                         <div class="trip_text1 col-5">請選擇造訪日期</div>
                         <div class="col-7">
                             <input class="trip_input_date" type="date" id="date_today1" min="2021-04-19">
-                            <div class="invalid-feedback">
-                            造訪日期未填喔!!
-                            </div>
+                            <div class="invalid-feedback">造訪日期未填喔!!</div>
                         </div>
                     </div>
                     <div class="py-lg-2 py-0 d-none d-lg-flex row">
@@ -826,7 +828,7 @@ foreach($pc_hot_trips as $key => $group) {
     </div>
 
     <div class="trip_fixed_bottom w-100 d-flex justify-content-between py-2 px-2 fixed-bottom d-lg-none ">
-        <div class="trip_fixed_bottom1 py-2"><i class="fas fa-shopping-cart px-2" style="color: #fff;"></i>加入購物車
+        <div class="trip_fixed_bottom1 py-2"><i class="fas fa-shopping-cart px-2" style="color: #fff;"></i><span>已</span>加入購物車
         </div>
         <div class="trip_fixed_bottom_line"></div>
         <div class="trip_fixed_bottom1 py-2">前往結帳</div>
@@ -1095,6 +1097,9 @@ foreach($pc_hot_trips as $key => $group) {
 
         trip_summary();
 
+        // mobile加入購物車
+
+
 
         // 網頁費用清單
 
@@ -1189,6 +1194,8 @@ foreach($pc_hot_trips as $key => $group) {
                     url: 'trip_add.php',
                     data: {
                         id: $('#trip_id').val(),
+                        name: $('#trip_name').val(),
+                        image: $('#trip_image').val(),
                         date: date,
                         qty: qty,
                         solution: solution_text,
@@ -1205,6 +1212,56 @@ foreach($pc_hot_trips as $key => $group) {
             }
         });
 
+        // 加入購物車
+        $('.trip_fixed_bottom1').click(function(){
+            if($(this).hasClass('active')) {
+                return;
+            }
+            var btn = this;
+            var date = $('#date_today').val();
+            var qty = $('#trip_qty').val();
+            var solution_text = "";
+            // 把選取的方案逐一處理
+            $("#trip_solution_checkbox .active").each(function () {
+                // 把方案名稱串成一個變數
+                solution_text += $(this).text() + " ";
+            });
+            // 取出加總後金額
+            var amount_text = $("#trip_amount").text();
+            // 加總後金額拿掉千位數符號
+            var amount = amount_text.replace(/,/g, "");
+            // 加總後金額千位數拿掉後轉成整數
+            amount = parseInt(amount);
+
+            if(!date) {
+                $('#date_today').addClass('is-invalid');
+                $('#date_today').focus();
+
+            } else {
+                $('#date_today').removeClass('is-invalid');
+                
+                $.ajax({
+                    type: "POST",
+                    url: 'trip_add.php',
+                    data: {
+                        id: $('#trip_id').val(),
+                        name: $('#trip_name').val(),
+                        image: $('#trip_image').val(),
+                        date: date,
+                        qty: qty,
+                        solution: solution_text,
+                        price: amount,
+                    },
+                    success: function(data){
+                        if(data.code == 200) {
+                            $(btn).toggleClass("active");
+                        }
+                    },
+                    dataType: 'json'
+                });
+                
+            }
+        });
 
         // overlayNav進場
         $('.nav_burgurBar_img').click(function () {

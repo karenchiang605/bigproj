@@ -333,6 +333,14 @@ h3 {
 
 }
 
+.trip_fixed_bottom1 span {
+    display: none;
+}
+
+.trip_fixed_bottom1.active span {
+    display: inline;
+}
+
 .trip_fixed_bottom_line {
     width: 1px;
     background-color: #fff;

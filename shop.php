@@ -1,3 +1,72 @@
+<?php
+
+require __DIR__ . "/__connect_db.php";
+
+$where = "WHERE cat2 = '聯名合作'";
+if (isset($_GET['price']) && $_GET['price']) {
+    $where = " WHERE price <= '".$_GET['price']."'";
+}
+if (isset($_GET['cat1']) && $_GET['cat1']) {
+    $where = " WHERE cat1 = '".$_GET['cat1']."'";
+}
+if (isset($_GET['cat2']) && $_GET['cat2']) {
+    $where = " WHERE cat2 = '".$_GET['cat2']."'";
+}
+if (isset($_GET['keyword']) && $_GET['keyword']) {
+    $where = " WHERE title2 like '%".$_GET['keyword']."%'";
+}
+
+$orderby = "ORDER BY hot DESC";
+
+if (isset($_GET['o']) && $_GET['o'] == 'price') {
+    $orderby = "ORDER BY ".$_GET['o']." ASC";
+} else if (isset($_GET['o']) && $_GET['o']) {
+    $orderby = "ORDER BY ".$_GET['o']." DESC";
+}
+
+$shop_order = isset($_GET['o'])?$_GET['o']:"";
+$cat1 = isset($_GET['cat1'])?$_GET['cat1']:"";
+$cat2 = isset($_GET['cat2'])?$_GET['cat2']:"";
+
+
+//分頁算法
+$page = (isset($_GET['page']) && $_GET['page'])?$_GET['page']:1;
+
+//當前頁數
+$per_page = 6; //一頁幾筆
+$sql = "SELECT COUNT(0) FROM shops {$where} ";
+$total = $pdo->query($sql)->fetch(PDO::FETCH_NUM)[0]; //總筆數
+$total_pages = ceil($total / $per_page); //總頁數
+
+
+//如果筆數非大於0則頁數為1
+if($total_pages > 0) {
+    $page = ($page > $total_pages)?$total_pages:$page;
+} else {
+    $page = 1;
+}
+$limit = sprintf("LIMIT %s, %s", ($page - 1)*$per_page, $per_page);
+//組合SQL(查詢)
+//SELECT * FROM shops ORDER BY hot DESC LIMIT 0, 6
+//SELECT * FROM shops ORDER BY hot DESC LIMIT 6, 6
+//SELECT * FROM shops ORDER BY hot DESC LIMIT 12, 6
+$sql = "SELECT * FROM shops {$where} {$orderby} {$limit}"; //組合SQL指令
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$shops = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// 取分頁連結
+function getPageLink($page) {
+    parse_str($_SERVER['QUERY_STRING'], $data); 
+    $data['page'] = $page;
+    return "shop.php?" . http_build_query($data);
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,20 +134,22 @@
             top: 15px;
         }
 
-        .shop_category {
+        .shop_category a{
             color: #707070;
         }
 
-        .shop_category ul li {
+        .shop_category ul li a{
             font-size: 20px;
         }
 
-        .shop_category ul li ul li {
+        .shop_category ul li ul li a{
             font-weight: normal;
         }
 
-        .shop_category ul li:hover {
+        .shop_category ul li a:hover,
+        .shop_category ul li a.active{
             font-weight: bold;
+            text-decoration:none;
         }
 
         #shop_price_range .slider-selection {
@@ -177,11 +248,12 @@
         }
 
         .shop_re_text {
+            font-weight: bold;
             font-size: 22px;
         }
 
         .shop_re_text1 {
-            font-size: 18px;
+            font-size: 16px;
 
         }
 
@@ -254,6 +326,9 @@
             font-weight: bold;
 
         }
+        .shop_price_mobile{
+            margin: auto;
+        }
 
         .shop_price_mobile .card {
             border-radius: 20px;
@@ -261,7 +336,7 @@
         }
 
         .shop_price_mobile .slider {
-            width: 300px;
+            width: 270px;
         }
 
         #shop_price_range .slider-selection {
@@ -285,6 +360,10 @@
             background-color: transparent;
         }
 
+        .shop_card{
+            
+        }
+
         @media (min-width: 992px) {
             .shop_container {
                 width: 1400px;
@@ -295,11 +374,6 @@
                 font-size: 25px;
                 color: #cc543a;
             }
-
-            /* 
-            .shop_like.active {
-                background-color: #cc543a;
-            } */
 
             .shop_like.active i {
                 color: #fff;
@@ -316,10 +390,10 @@
                 width: 208px;
                 height: 386px;
                 position: absolute;
-                bottom: 600px;
+                bottom: 300px;
                 left: 300px;
                 background-size: cover;
-                background-image: url(/img/nav_shop.png);
+                background-image: url(img/nav_shop.png);
                 opacity: 0.39;
             }
         }
@@ -367,6 +441,7 @@
             }
 
         }
+
     </style>
 </head>
 
@@ -489,7 +564,7 @@
     </nav>
     <div class="breadcrumb_style backgroundimg_1">
         <div class="d-flex flex-wrap breadcrumb_style_1 ">
-            <a href="" class="astlyep">Home</a>
+            <a href="" class="astlyep">首頁</a>
             <!-- 共用雲端找箭頭icon-->
             <img src="./img/nav_arrow_right.svg">
             祈福商店
@@ -497,15 +572,14 @@
     </div>
     <div class="container-fluid shop_body_bg">
         <div class="shop_container container-fluid px-lg-5 px-3 px-0">
-            <div class="d-flex justify-content-between d-block   d-lg-none">
-                <select class="shop_item_body_more shadow bg-white text-center" id="exampleFormControlSelect1">
+            <div class="d-flex justify-content-between mb-2 d-lg-none">
+                <select class="shop_item_body_more shadow bg-white text-center <?=($cat2||$cat1)?'active':''?>" id="exampleFormControlSelect1">
                     <option>商品分類</option>
-                    <option>線香</option>
-                    <option>飾品</option>
-                    <option>服飾</option>
-                    <option>平安符</option>
-                    <option>聯名商品</option>
-                    <option>熱門商品</option>
+                    <option value="飾品" <?=($cat1=='飾品')?'selected':''?>>飾品</option>
+                    <option value="擺飾" <?=($cat1=='擺飾')?'selected':''?>>擺飾</option>
+                    <option value="平安符"<?=($cat1=='平安符')?'selected':''?>>平安符</option>
+                    <option value="聯名合作"<?=($cat2=='聯名合作')?'selected':''?>>聯名合作</option>
+                    <option value="熱門商品"<?=($cat2=='熱門商品')?'selected':''?>>熱門商品</option>
                 </select>
                 <div class="shop_item_body_more shadow bg-white d-flex align-items-center justify-content-center"
                     data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
@@ -513,8 +587,8 @@
                     價錢範圍
                 </div>
             </div>
-            <div class="row">
-                <div class="collapse shop_price_mobile" id="collapseExample">
+            <div class="row d-block d-lg-none">
+                <div class="collapse shop_price_mobile <?=isset($_GET['price'])?' show':''?>" id="collapseExample">
                     <div class="card card-body">
                         <ul>
                             <li class="py-1">
@@ -532,7 +606,7 @@
                     <div style="max-width:210px;">
                         <div class="shop_search position-relative mb-5">
                             <input type="text" class="form-control border-0 bg-transparent px-1"
-                                id="formGroupExampleInput" placeholder="找商品..">
+                                id="keyword" placeholder="找商品..">
                             <i class="fa fa-search fa-lg"></i>
                         </div>
                         <div class="d-none">
@@ -542,11 +616,11 @@
                         <div class="shop_category">
                             <h3 class="py-2">商品分類 |</h3>
                             <ul>
-                                <li class="py-1">飾品</li>
-                                <li class="py-1">擺飾</li>
-                                <li class="py-1">平安符</li>
-                                <li class="py-1">聯名合作</li>
-                                <li class="py-1">熱門商品</li>
+                                <li class="py-1"><a <?=(isset($_GET['cat1']) && $_GET['cat1'] == '飾品')?'class="active"':''?>href="shop.php?cat1=飾品">飾品</a></li>
+                                <li class="py-1"><a <?=(isset($_GET['cat1']) && $_GET['cat1'] == '擺飾')?'class="active"':''?>href="shop.php?cat1=擺飾">擺飾</a></li>
+                                <li class="py-1"><a <?=(isset($_GET['cat1']) && $_GET['cat1'] == '平安符')?'class="active"':''?>href="shop.php?cat1=平安符">平安符</a></li>
+                                <li class="py-1"><a <?=(isset($_GET['cat2']) && $_GET['cat2'] == '聯名合作')?'class="active"':''?>href="shop.php?cat2=聯名合作">聯名合作</a></li>
+                                <li class="py-1"><a <?=(isset($_GET['cat2']) && $_GET['cat2'] == '熱門商品')?'class="active"':''?>href="shop.php?cat2=熱門商品">熱門商品</a></li>
                             </ul>
                             <ul>
                                 <li class="py-1">
@@ -560,31 +634,36 @@
                     </div>
                 </div>
                 <div class="col-lg-9">
-                    <div class="d-lg-flex justify-content-between d-none d-lg-block">
-                        <h3>熱門商品</h3>
+                    <div class="d-lg-flex justify-content-end d-none d-lg-block">
                         <div class="shop_sort d-flex justify-content-end mb-5 ">
                             <div class="form-inline">
                                 <label class="pr-3" for="exampleFormControlSelect1">排序方式</label>
-                                <select class="form-control bg-transparent" id="exampleFormControlSelect1">
-                                    <option>熱門商品</option>
-                                    <option>價格(從低到高)</option>
+                                <select class="form-control bg-transparent" id="shop_order">
+                                    <option value="hot" <?=($shop_order=='hot')?'selected':''?>>熱門商品</option>
+                                    <option value="created_at" <?=($shop_order=='created_at')?'selected':''?>>最新商品</option>
+                                    <option value="price" <?=($shop_order=='price')?'selected':''?>>價格(從低到高)</option>
                                 </select>
                             </div>
                         </div>
                     </div>
-                    <div class="row shop_scrolling_wrapper">
-                        <div class="col-lg-4 col-6 mt-4 mt-lg-0 ">
+                    <div class="row shop_scrolling_wrapper"
+                    data-aos="fade-up" data-aos-duration="2000">
+                    <?php
+if(count($shops) > 0) {
+    foreach($shops as $shop){
+?>
+                       <div class="shop_card col-lg-4 col-6 mt-4 mt-lg-0 ">
                             <div class="shop_re_img_card shadow ">
                                 <div class="shop_re_img">
-                                    <img src="/img/013.png" width="100%" />
+                                    <img src="img/<?=$shop['img1']?>" width="100%" />
                                     <div class="shop_re_more">
                                     </div>
                                 </div>
-                                <div class="shop_re_card mb-4 ">
-                                    <div class="shop_re_text pt-2 pl-3">藝術廟宇戒指
+                                <div class="shop_re_card mb-lg-5 mb-0">
+                                    <div class="shop_re_text pt-2 pl-3"><?=$shop['title1']?>
                                     </div>
-                                    <div class="shop_re_text1 pl-3">TIMBEE 限量版 </div>
-                                    <div class="pb-3 shop_re_price pl-3"><span>NTD 1,109</span>元</div>
+                                    <div class="shop_re_text1 pl-3"><?=$shop['title2']?></div>
+                                    <div class="pb-3 shop_re_price pl-3"><span>NTD <?=number_format($shop['price'],0,".",",")?></span>元</div>
                                 </div>
                             </div>
                             <div
@@ -592,7 +671,17 @@
                                 <i class="far fa-heart"></i>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-6 mt-4 mt-lg-0">
+<?php
+    }
+} else { 
+?>
+                       <div class=" text-center">不好意思，我們沒有找到相關的商品</div>
+<?php
+}
+?>
+                        
+
+                        <!-- <div class="col-lg-4 col-6 mt-4 mt-lg-0">
                             <div class="shop_re_img_card shadow">
                                 <div class="shop_re_img">
                                     <img src="/img/011.png" width="100%" />
@@ -800,7 +889,7 @@
                                 class="shop_like position-absolute d-flex justify-content-center align-items-center mr-lg-4 mt-lg-2 mr-3 mt-1">
                                 <i class="far fa-heart"></i>
                             </div>
-                        </div>
+                        </div> -->
 
                     </div>
 
@@ -809,11 +898,19 @@
             </div>
             <nav class="shop_page position-relative d-flex justify-content-end" aria-label="Page navigation example">
                 <ul class="pagination ">
-                    <li class="page-item"><a class="page-link shop_page_item active" href="#">1</a></li>
+                <?php
+                for($i=1;$i<=$total_pages;$i++){
+                ?> 
+                   <li class="page-item"><a class="page-link shop_page_item <?=($page==$i)?'active':''?>"href="<?=getPageLink($i)?>"><?=$i?></a></li>
+                <?php
+                }
+                ?>
+                
+                    <!-- <li class="page-item"><a class="page-link shop_page_item active" href="#">1</a></li>
                     <li class="page-item"><a class="page-link shop_page_item" href="#">2</a></li>
                     <li class="page-item"><a class="page-link shop_page_item" href="#">3</a></li>
                     <li class="page-item"><a class="page-link shop_page_item" href="#">4</a></li>
-                    <li class="page-item"><a class="page-link shop_page_item" href="#">></a></li>
+                    <li class="page-item"><a class="page-link shop_page_item" href="#">></a></li> -->
                 </ul>
             </nav>
         </div>
@@ -937,16 +1034,51 @@
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+        AOS.init();
+        var urlParams = new URLSearchParams(window.location.search);
         $(".shop_price_range").slider({
             tooltip: 'always',
-            tooltip_position: 'bottom'
+            tooltip_position: 'bottom',
+        }).slider('setValue', urlParams.get('price')?urlParams.get('price'):5000).on('slideStop', function(){
+            location.href="shop.php?price=" + $(this).val();
         });
+
         $(".shop_price_range_mobile").slider({
             tooltip: 'always',
-            tooltip_position: 'bottom'
+            tooltip_position: 'bottom',
+        }).slider('setValue', urlParams.get('price')?urlParams.get('price'):5000).on('slideStop', function(){
+            location.href="shop.php?price=" + $(this).val();
         });
+
         $(".shop_like").click(function () {
             $(this).toggleClass('active');
+        });
+        
+        $(".shop_item_body_more").change(function () {
+            if ($(this).val() > 0) {
+                $(this).addClass('active');
+            } else {
+                $(this).removeClass('active');
+            }
+            if ($(this).val() == "飾品" || $(this).val() == "擺飾" || $(this).val() == "平安符") {
+                location.href="shop.php?cat1=" + $(this).val()
+            }
+
+            if ($(this).val() == "聯名合作" || $(this).val()=="熱門商品") {
+                  location.href="shop.php?cat2=" + $(this).val()
+            }
+        })
+
+        $(".shop_search i").click(function(){
+            location.href="shop.php?keyword=" + $('#keyword').val();
+        })
+
+        $('#keyword').val(urlParams.get('keyword'));
+
+        $('#shop_order').change(function(){
+            urlParams.delete("page");
+            urlParams.set("o", $(this).val());
+            location.href="shop.php?" + urlParams.toString();
         });
 
         // overlayNav進場
@@ -979,6 +1111,14 @@
         $('#passwordbtn').click(function () {
             $('#loginCenter').modal('hide');
         })
+
+        //overlay sub-menu
+        $(document).ready(function () {
+       $('.nav_ser_mobile').click(function () {
+        $('.nav_dropDownMenu_mobile').toggle('slow');
+
+})
+});
 
 
     </script>

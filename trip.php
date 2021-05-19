@@ -28,7 +28,9 @@ $cat_area = isset($_GET['cat_area'])?$_GET['cat_area']:"";
 $cat = isset($_GET['cat'])?$_GET['cat']:"";
 
 //分頁算法
-$page = (isset($_GET['page']) && $_GET['page'])?$_GET['page']:1; //當前頁數
+$page = (isset($_GET['page']) && $_GET['page'])?$_GET['page']:1; 
+
+//當前頁數
 $per_page = 8; //一頁幾筆
 $sql = "SELECT COUNT(0) FROM trips {$where}";
 $total = $pdo->query($sql)->fetch(PDO::FETCH_NUM)[0]; //總筆數
@@ -48,7 +50,7 @@ $trips = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 //組合SQL
 $sql = "SELECT * FROM trips {$where} {$orderby} {$limit}";
-//SELECT * FROM trips WHERE cat = '熱門行程' ORDER BY hot DESC LIMIT 0, 8
+//SELECT * FROM trips WHERE cat = '熱門行程' ORDER BY hot DESC LIMIT 0, 6
 //SELECT * FROM trips WHERE title2 like '%aaa%' ORDER BY hot DESC LIMIT 0, 8
 //echo $sql;
 $stmt = $pdo->prepare($sql);
