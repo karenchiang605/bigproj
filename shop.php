@@ -359,9 +359,9 @@ function getPageLink($page) {
             color: #000;
             background-color: transparent;
         }
-
-        .shop_card{
-            
+        
+        .shop_scrolling_wrapper{
+            font-weight: bold;
         }
 
         @media (min-width: 992px) {
@@ -395,6 +395,10 @@ function getPageLink($page) {
                 background-size: cover;
                 background-image: url(img/nav_shop.png);
                 opacity: 0.39;
+            }
+
+            .shop_scrolling_wrapper{
+                min-height: 600px;
             }
         }
 
@@ -438,7 +442,7 @@ function getPageLink($page) {
 
             .shop_re_price {
                 font-size: 18px;
-            }
+            }    
 
         }
 
@@ -656,8 +660,7 @@ if(count($shops) > 0) {
                             <div class="shop_re_img_card shadow ">
                                 <div class="shop_re_img">
                                     <img src="img/<?=$shop['img1']?>" width="100%" />
-                                    <div class="shop_re_more">
-                                    </div>
+                                    <a href="shop_page.php?id=<?=$shop['id']?>"><div class="shop_re_more"></div></a>
                                 </div>
                                 <div class="shop_re_card mb-lg-5 mb-0">
                                     <div class="shop_re_text pt-2 pl-3"><?=$shop['title1']?>
